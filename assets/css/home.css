@@ -1,0 +1,60 @@
+/*Image Responsive*/
+header.homepage {
+  margin-bottom: 50px;
+  background: no-repeat center center;
+  background-color: #868e96;
+  background-attachment: scroll;
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/*Shadow for background image*/
+header.homepage .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #212529;
+  opacity: 0.5;
+}
+
+header.homepage .home-heading {
+  padding: 150px 0 150px;
+  color: white;
+}
+
+@media only screen and (min-width: 768px) {
+  header.homepage .home-heading {
+    padding: 150px 0;
+  }
+}
+
+header.homepage .home-heading {
+  text-align: center;
+}
+
+.home-title {
+  font-size: 70px;
+  margin-top: 0;
+}
+
+.home-subtitle {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.1;
+  display: block;
+  margin: 10px 0 0;
+}
+
+@media only screen and (min-width: 768px) {
+  header.homepage .home-heading h1 {
+    font-size: 80px;
+  }
+}
+
+
+
+
