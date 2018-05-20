@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Navbar</title>
+    <title>MANT</title>
 </head>
 <body>
 <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="<?php echo base_url('');?>"> <img src="<?php base_url();?>assets/img/logo.png" width="" height="40" class="d-inline-block align-top mr-1" alt=""></a>
+    <a class="navbar-brand" href="<?php echo base_url('');?>"> <img src="<?php echo base_url();?>assets/img/logo.png" width="" height="40" class="d-inline-block align-top mr-1" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,7 +16,7 @@
             <a class="nav-item nav-link active" href="<?php echo base_url();?>posts">Hear the world</a>
             <a class="nav-item nav-link active" href="<?php echo base_url();?>posts">Timeline</a>
             <a class="nav-item nav-link active" href="<?php echo base_url();?>user">Profile</a>
-            <a class="nav-item nav-link active" href="<?php echo base_url();?>">Post</a>
+            <a class="nav-item nav-link active" href="<?php echo base_url();?>posts/create">Post</a>
             <a class="nav-item nav-link active" href="<?php echo base_url();?>">About us</a>
         </div>
 

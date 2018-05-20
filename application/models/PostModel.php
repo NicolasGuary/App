@@ -13,4 +13,13 @@
             $query = $this->db->query("SELECT * FROM post WHERE id = $id");
             return $query->result_array();
         }
+
+        public function createPost(){
+        $data = array(
+            'link' =>$this->input->post('link'),
+            'contenu' =>$this->input->post('contenu'),
+            'idUser' =>1
+        );
+        return $this->db->insert('post',$data);
+    }
     }

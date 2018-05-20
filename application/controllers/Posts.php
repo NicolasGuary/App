@@ -32,4 +32,19 @@ class Posts extends CI_Controller{
         $this->load->view('templates/footer');
     }
 
+    public function create(){
+
+        $this->form_validation->set_rules('link','URL','required');
+
+        if($this->form_validation->run() === FALSE){
+            $this->load->view('templates/header');
+            $this->load->view('posts/create');
+            $this->load->view('templates/footer');
+        } else {
+            $this->PostModel->createPost();
+            redirect('posts');
+        }
+
+
+    }
 }
