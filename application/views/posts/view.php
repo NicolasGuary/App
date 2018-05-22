@@ -12,8 +12,8 @@
         </div>
         <!--Corps du post-->
         <div class="card-body">
-            <h5 class="card-title">GET TITLE YOUTUBE?</h5>
-            <div class="text-center"> <iframe width="560" height="315" src="<?php echo $post['link']; ?>" frameborder="0" allow="autoplay;" allowfullscreen></iframe></div>
+            <h5 class="card-title"><?php echo $post['titre'];?></h5>
+            <div class="text-center"> <iframe width="600" height="330" src="<?php echo "https://www.youtube.com/embed/".$post['link'];?>" frameborder="0" allow="autoplay;" allowfullscreen></iframe></div>
             <p class="card-text mt-2"><?php echo $post['contenu']; ?></p>
             <div class="row">
                 <div class="col-lg-2 col-sm-3">

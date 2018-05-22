@@ -7,5 +7,6 @@ class Pages extends CI_Controller{
             show_404();
         }
             $this->load->view('pages/home');
+            $this->load->view('templates/footer');
         }
 }

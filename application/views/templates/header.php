@@ -7,7 +7,7 @@
 <body>
 <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="<?php echo base_url('');?>"> <img src="<?php echo base_url();?>assets/img/logo.png" width="" height="40" class="d-inline-block align-top mr-1" alt=""></a>
+    <a class="navbar-brand" href="<?php echo base_url();?>"> <img src="<?php echo base_url();?>assets/img/logo.png" width="" height="40" class="d-inline-block align-top mr-1" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
