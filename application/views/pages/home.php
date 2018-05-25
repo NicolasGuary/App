@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="<?php echo base_url();?>assets/img/favicon.png">
     <title>Welcome to MANT !</title>
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +19,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarMenu">
         <div class="navbar-nav ml-auto mr-3">
-            <a href="#" class="btn btn-primary ">Sign up</a>
+            <a href="<?php echo base_url();?>users/register" class="btn btn-primary ">Sign up</a>
             <a href="#" class="btn btn-link ml-2">Sign in</a>
         </div>
     </div>
@@ -35,7 +36,7 @@
                     <span class="home-subtitle">Don't simply listen to music</span>
                     <h1 class="home-title">SHARE IT.</h1>
                     <span class="home-subtitle">And make new friends !</span>
-                    <a href="#" class="btn btn-primary mt-5">Get started !</a>
+                    <a href="<?php echo base_url();?>users/register" class="btn btn-primary mt-5">Get started !</a>
                 </div>
             </div>
         </div>

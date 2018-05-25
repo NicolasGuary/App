@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>MANT</title>
+    <link rel="icon" href="<?php echo base_url();?>assets/img/favicon.png">
 </head>
 <body>
 <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
