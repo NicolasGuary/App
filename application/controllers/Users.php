@@ -13,10 +13,79 @@
                 $this->load->view('users/register');
                 $this->load->view('templates/footer');
             } else {
-                $encrypted = password_hash(($this->input->post('mdp')),PASSWORD_DEFAULT);
-                $this->UserModel->register($encrypted);
+                //UPLOAD IMAGE
+                $config['upload_path']='./assets/img/uploads/';
+                $config['allowed_types']='gif|jpg|png';
+                $config['max_size']='2048';
+                $config['max-width']='2000';
+                $config['max_height']='2000';
+                $config['encrypt_name']=true;
+                $this->load->library('upload',$config);
 
-                redirect('posts');
+                if(!$this->upload->do_upload()){
+                    $errors = array('error' => $this->upload->display_errors());
+                    $user_image = 'default.png';
+                } else{
+                    $data = array('upload_data' => $this->upload->data());
+                    //$user_image = $_FILES['userfile']['name'];
+                    $user_image = $this->upload->data('file_name');
+                }
+                //HASH PASSWORD BCRYPT
+                $encrypted = password_hash(($this->input->post('mdp')),PASSWORD_DEFAULT);
+                $this->UserModel->register($encrypted, $user_image);
+
+                redirect('users/login');
             }
+        }
+
+        public function login(){
+            $this->form_validation->set_rules('email','Email','callback_user_check|required|valid_email');
+            $this->form_validation->set_rules('mdp','Password','callback_user_check|required|min_length[7]');
+
+            if($this->form_validation->run() === FALSE){
+                $this->load->view('templates/header');
+                $this->load->view('users/login');
+                $this->load->view('templates/footer');
+            }
+            else {
+                /* Get user email */
+                $mail = $this->input->post('email');
+
+                /* Get input user password */
+                $encrypted = password_hash(($this->input->post('mdp')),PASSWORD_DEFAULT);
+
+                //Login user
+                $idUser = $this->UserModel->login($mail,$encrypted);
+
+
+                if($this->user_check($idUser)){
+                    //SET COOKIE
+                    die('SUCCESS');
+                    redirect('posts');
+                } else{
+                    redirect('users/login');
+                }
+
+            }
+        }
+
+        public function user_check($idUser){
+            if($idUser){
+                return true;
+                die('SUCCESS');
+                //redirect('posts');
+            } else {
+                $this->form_validation->set_message('user_check', 'Invalid email and/or password.');
+                return false;
+            }
+        }
+
+        public function profile($idUser){
+            $data['user'] = $this->UserModel->getUser($idUser);
+            $data['user']=$data['user'][0];
+            $data['posts'] = $this->PostModel->getUsersPosts($idUser);
+            $this->load->view('templates/header');
+            $this->load->view('users/profile',$data);
+            $this->load->view('templates/footer');
         }
     }

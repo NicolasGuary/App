@@ -8,7 +8,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <?php echo form_open('posts/create');?>
-            <?php echo validation_errors();?>
+            <?php echo validation_errors('<p class="text-danger text-center font-weight-bold mt-2">','</p>');?>
 
             <div class="col-10 mx-auto mt-3">
                 <div class="container mt-3">
@@ -42,11 +42,13 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-12">
-                    <img alt="User Pic" src="<?php echo base_url();?>assets/uploads/<?php echo $post['photo'];?>" id="profile-image1" class="ml-auto mr-4 d-block img-circle img-responsive float-left" height="70" width="70">
+                    <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $post['photo'];?>" id="profile-image1" class="ml-auto mr-4 d-block img-circle img-responsive float-left" height="70" width="70">
                     <h3 class="text-uppercase font-weight-bold"><?php echo $post['prenom']." ".$post['nom'];?></h3>
-                    <h6 class="font-weight-light"><a href="<?php echo base_url().'posts/'.$post['id'];?>"><?php echo $post['date'];?> at <?php echo $post['time'];?></h6></a>
+                    <a href="#" class="badge badge-secondary">Follow</a>
+                    <span class="badge badge-pill badge-primary">1000 Followers</span>
                 </div>
             </div>
+            <small class="font-weight-light mt-2"><a href="<?php echo site_url('/posts/'.$post['id']);?>"><?php echo $post['date'];?> at <?php echo $post['time'];?></small></a>
         </div>
         <!--Corps du post-->
         <div class="card-body">
@@ -84,6 +86,7 @@
                     <div class="card mb-2">
                         <div class="row">
                             <div class="col-10">
+                                <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $comment['photo'];?>" id="profile-image1" class=" ml-1 mt-1 mr-3 d-block img-responsive float-left" height="50" width="50">
                                     <h3 class="ml-3 mt-1"><?php echo $comment['prenom']." ".$comment['nom'];?></h3>
                                 <p class="text-secondary bg-light col-lg-6 col-sm-12"> published: <?php echo $comment['commented_at']?></p>
                                 <p class="ml-3"><?php echo $comment['body'];?></p>

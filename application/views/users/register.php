@@ -40,11 +40,11 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-3">Profile Photo
-                            <small>(optional)</small></label>
+                        <label class="control-label col-sm-3">Profile Photo <small>(optional)</small></label>
                         <div class="col-10 mx-auto">
+                            <small class="text-center">2000x2000 pixels, 2Mo maximum ! .png, .jpg, .gif accepted.</small>
                             <div class="input-group">
-                                <input type="file" name="photo" id="photo" class="form-control upload" placeholder="">
+                                <input type="file" name="userfile" id="photo" class="form-control upload">
                             </div>
                         </div>
                     </div>

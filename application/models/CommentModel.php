@@ -24,7 +24,6 @@
             return $query->result_array();
         }
 
-
         public function getAllComments(){
             $query = $this->db->query(
             'SELECT comment.id, comment.body, comment.idPost, comment.commented_at, user.id, user.nom, user.prenom, user.photo, post.id 

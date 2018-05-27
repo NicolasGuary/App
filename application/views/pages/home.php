@@ -20,7 +20,7 @@
     <div class="collapse navbar-collapse" id="navbarMenu">
         <div class="navbar-nav ml-auto mr-3">
             <a href="<?php echo base_url();?>users/register" class="btn btn-primary ">Sign up</a>
-            <a href="#" class="btn btn-link ml-2">Sign in</a>
+            <a href="<?php echo base_url();?>users/login" class="btn btn-link ml-2">Sign in</a>
         </div>
     </div>
 

@@ -14,6 +14,17 @@
             return $query->result_array();
         }
 
+        public function getUsersPosts($idUser){
+            $query = $this->db->query(
+            'SELECT user.id, user.nom, user.prenom, user.photo, post.id, post.contenu, post.link,post.idUser,post.date,post.time,post.titre
+            FROM post, user
+            WHERE user.id=?
+            AND user.id = post.idUser 
+            ORDER BY post.id DESC
+            ',array($idUser));
+            return $query->result_array();
+        }
+
         private function getVideoID($url){
             preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
             if(isset($match[1])){
