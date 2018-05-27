@@ -21,12 +21,12 @@
         public function login($mail,$password){
             //VALIDATION
             $this->db->where('email',$mail);
-            $this->db->where('mdp',$password);
+            $pass = $this->db->query('select user.mdp from user where user.email = ?',$mail);
 
-            $res = $this->db->get('user');
+            $res = password_verify($password,$pass);
 
-            if($res->num_rows()===1){
-                return $res->row(0)->id;
+            if($res){
+                return $this->db->query('select user.id from user where user.email = ?',$mail);
             } else{
                 return false;
             }

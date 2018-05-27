@@ -4,8 +4,14 @@
             $this->load->database();
         }
 
-        public function getPosts(){
-            $query = $this->db->query("SELECT post.id, post.contenu, post.link,post.idUser,post.date,post.time,post.titre,user.prenom,user.nom, user.photo FROM post,user WHERE post.idUser = user.id ORDER BY post.id DESC");
+        public function getPosts($limit=FALSE, $offset=FALSE){
+            $offset = intval($offset);
+            $query = $this->db->query(
+            'SELECT post.id, post.contenu, post.link,post.idUser,post.date,post.time,post.titre,user.prenom,user.nom, user.photo 
+             FROM post,user 
+             WHERE post.idUser = user.id
+             ORDER BY post.id DESC
+             LIMIT ? OFFSET ?;',array($limit,$offset));
             return $query->result_array();
         }
 

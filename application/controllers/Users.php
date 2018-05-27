@@ -52,17 +52,17 @@
                 $mail = $this->input->post('email');
 
                 /* Get input user password */
-                $encrypted = password_hash(($this->input->post('mdp')),PASSWORD_DEFAULT);
+                $pass = $this->input->post('mdp');
 
                 //Login user
-                $idUser = $this->UserModel->login($mail,$encrypted);
+                $idUser = $this->UserModel->login($mail,$pass);
 
-
-                if($this->user_check($idUser)){
+                if($idUser){
                     //SET COOKIE
                     die('SUCCESS');
                     redirect('posts');
                 } else{
+                    echo '<script>alert("Wrong password and/or email !");</script>';
                     redirect('users/login');
                 }
 

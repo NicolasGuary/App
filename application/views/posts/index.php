@@ -102,3 +102,6 @@
     </div>
 </div>
 <?php endforeach;?>
+
+    <?php echo $pagination;?>
+
