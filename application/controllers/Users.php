@@ -62,7 +62,7 @@
                     die('SUCCESS');
                     redirect('posts');
                 } else{
-                    echo '<script>alert("Wrong password and/or email !");</script>';
+                  //  log_message('error', 'Wrong email and/or password !');
                     redirect('users/login');
                 }
 
@@ -84,8 +84,16 @@
             $data['user'] = $this->UserModel->getUser($idUser);
             $data['user']=$data['user'][0];
             $data['posts'] = $this->PostModel->getUsersPosts($idUser);
+            $data['followers'] = $this->UserModel->followers($idUser);
+            $data['followers'] = $data['followers'][0];
             $this->load->view('templates/header');
             $this->load->view('users/profile',$data);
             $this->load->view('templates/footer');
+        }
+
+        public function follow($idUser = false){
+            $idFollower=13;
+            $this->UserModel->follow($idUser,$idFollower);
+            redirect('posts');
         }
     }

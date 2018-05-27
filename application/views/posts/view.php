@@ -6,11 +6,13 @@
                 <div class="col-12">
                     <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $post['photo'];?>" id="profile-image1" class="ml-auto mr-4 d-block img-circle img-responsive float-left" height="70" width="70">
                     <h3 class="text-uppercase font-weight-bold"><?php echo $post['prenom']." ".$post['nom'];?></h3>
-                    <a href="#" class="badge badge-secondary">Follow</a>
-                    <span class="badge badge-pill badge-primary">1000 Followers</span>
+                    <?php echo form_open('users/follow/'.$post['idUser']);?>
+                    <button type="submit" name="follow" value="follow"  class="badge badge-secondary">Follow</button>
+                    <span class="badge badge-pill badge-primary"><?php echo $followers['followers'];?> Followers</span>
+                    <?php echo form_close();?>
                 </div>
             </div>
-            <small class="font-weight-light mt-2"><a href="<?php echo site_url('/posts/'.$post['id']);?>"><?php echo $post['date'];?> at <?php echo $post['time'];?></small></a>
+            <small class="font-weight-light mt-2"><a href="<?php echo site_url('/posts/'.$post['id']);?>">Posted: <?php echo $post['date'];?></small></a>
         </div>
         <!--Corps du post-->
         <div class="card-body">

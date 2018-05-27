@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$route['users/follow'] = 'users/follow';
 $route['users/register'] = 'users/register';
 $route['users/login'] = 'users/login';
 $route['users/(:any)'] = 'users/profile/$1';

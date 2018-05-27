@@ -7,7 +7,7 @@
         public function getPosts($limit=FALSE, $offset=FALSE){
             $offset = intval($offset);
             $query = $this->db->query(
-            'SELECT post.id, post.contenu, post.link,post.idUser,post.date,post.time,post.titre,user.prenom,user.nom, user.photo 
+            'SELECT post.id, post.contenu, post.link,post.idUser,post.date,post.titre, post.idUser, user.prenom,user.nom, user.photo
              FROM post,user 
              WHERE post.idUser = user.id
              ORDER BY post.id DESC
@@ -16,19 +16,25 @@
         }
 
         public function getPost($id){
-            $query = $this->db->query('SELECT post.id, post.contenu, post.link,post.idUser,post.date,post.time,post.titre,user.prenom,user.nom, user.photo FROM post,user WHERE post.idUser = user.id and '.$id.'=post.id');
+            $query = $this->db->query('SELECT post.id, post.contenu, post.link,post.idUser,post.date,post.titre, post.idUser, user.prenom,user.nom, user.photo FROM post,user WHERE post.idUser = user.id and '.$id.'=post.id');
             return $query->result_array();
         }
 
         public function getUsersPosts($idUser){
             $query = $this->db->query(
-            'SELECT user.id, user.nom, user.prenom, user.photo, post.id, post.contenu, post.link,post.idUser,post.date,post.time,post.titre
+            'SELECT user.id, user.nom, user.prenom, user.photo, post.id, post.contenu, post.link,post.idUser,post.date,post.titre
             FROM post, user
             WHERE user.id=?
             AND user.id = post.idUser 
             ORDER BY post.id DESC
             ',array($idUser));
             return $query->result_array();
+        }
+
+        public function getAuthor($idPost){
+            $query = $this->db->query('SELECT idUser FROM post WHERE id = ?',$idPost);
+            return $query->result_array();
+
         }
 
         private function getVideoID($url){
@@ -44,7 +50,6 @@
             parse_str($content, $ytarr);
             return $ytarr['title'];
         }
-
         public function createPost(){
             $vid = $this->input->post('link');
             $id = $this->getVideoID($vid);

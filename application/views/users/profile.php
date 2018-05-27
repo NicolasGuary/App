@@ -8,8 +8,10 @@
                     <h3 class="text-uppercase font-weight-bold"><?php echo $user['prenom']." ".$user['nom'];?></h3>
                     <small class="font-weight-light mt-2"> joined: <?php echo $user['date_inscription'];?></small>
                     <hr>
-                    <a href="#" class="badge badge-secondary">Follow</a>
-                    <span class="badge badge-pill badge-primary">1000 Followers</span>
+                    <?php echo form_open('users/follow/'.$user['id']);?>
+                    <button type="submit" name="follow" value="follow"  class="badge badge-secondary">Follow</button>
+                    <span class="badge badge-pill badge-primary"><?php echo $followers['followers'];?> Followers</span>
+                    <?php echo form_close();?>
                 </div>
             </div>
         </div>
@@ -23,7 +25,7 @@
             <!--Corps du post-->
             <div class="card-body">
                 <h5 class="card-title text-center"><?php echo $post['titre'];?></h5>
-                <div class="text-center"><small class="font-weight-light mb-4"><a href="<?php echo site_url('/posts/'.$post['id']);?>"><?php echo $post['date'];?> at <?php echo $post['time'];?></small></a></div>
+                <div class="text-center"><small class="font-weight-light mb-4"><a href="<?php echo site_url('/posts/'.$post['id']);?>">Posted: <?php echo $post['date'];?></small></a></div>
                 <div class="mb-3 text-center embed-responsive embed-responsive-16by9 col-8 mx-auto"> <iframe class="embed-responsive-item" width="600" height="330" src="<?php echo "https://www.youtube.com/embed/".$post['link'];?>" frameborder="0" allow="autoplay;" allowfullscreen></iframe></div>
                 <hr>
                 <p class="bg-light mt-2 text-center"><?php echo $post['contenu'];?></p>

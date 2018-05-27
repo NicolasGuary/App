@@ -34,6 +34,15 @@ class Posts extends CI_Controller{
         $data['posts'] = $this->PostModel->getPosts($config['per_page'], $offset);
         $data['comments']= $this->CommentModel->getAllComments();
         $data['pagination'] = $this->pagination->create_links();
+
+        foreach ($data['posts'] as $post){
+            $idPost = $post['id'];
+            $idUser = $this->PostModel->getAuthor($idPost);
+            $idUser = intval($idUser[0]['idUser']);
+            $tmp[] = $this->UserModel->followers($idUser);
+        }
+
+        $data['followers'] = $tmp;
         $this->load->view('templates/header');
         $this->load->view('posts/index',$data);
         $this->load->view('templates/footer');
@@ -47,13 +56,14 @@ class Posts extends CI_Controller{
         if(empty($data['post'])){
             show_404();
         }
-
+        $idUser = $this->PostModel->getAuthor($idPost);
+        $data['followers'] = $this->UserModel->followers($idUser);
+        $data['followers'] = $data['followers'][0];
         $data['post'] = $data['post'][0];
         $this->load->view('templates/header');
         $this->load->view('posts/view',$data);
         $this->load->view('templates/footer');
     }
-
 
     public function create(){
         $this->form_validation->set_rules('link','URL','required|callback_youtube_link');

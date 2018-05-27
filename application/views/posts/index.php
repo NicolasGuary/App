@@ -9,7 +9,6 @@
         <div class="modal-content">
             <?php echo form_open('posts/create');?>
             <?php echo validation_errors('<p class="text-danger text-center font-weight-bold mt-2">','</p>');?>
-
             <div class="col-10 mx-auto mt-3">
                 <div class="container mt-3">
                     <div class="row justify-content-center">
@@ -35,6 +34,7 @@
         </div>
     </div>
 </div>
+<?php $iterate = 0;?>
 <?php foreach ($posts as $post) : ?>
 <div class ="container col-lg-9 col-md-9 col-sm-9 mb-3 mt-2">
     <div class="card h-50">
@@ -44,11 +44,13 @@
                 <div class="col-12">
                     <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $post['photo'];?>" id="profile-image1" class="ml-auto mr-4 d-block img-circle img-responsive float-left" height="70" width="70">
                     <h3 class="text-uppercase font-weight-bold"><?php echo $post['prenom']." ".$post['nom'];?></h3>
-                    <a href="#" class="badge badge-secondary">Follow</a>
-                    <span class="badge badge-pill badge-primary">1000 Followers</span>
+                    <?php echo form_open('users/follow/'.$post['idUser']);?>
+                    <button type="submit" name="follow" value="follow" class="badge badge-secondary">Follow</button>
+                    <span class="badge badge-pill badge-primary"><?php echo $followers[$iterate][0]['followers'];?> Followers</span>
+                    <?php echo form_close();?>
                 </div>
             </div>
-            <small class="font-weight-light mt-2"><a href="<?php echo site_url('/posts/'.$post['id']);?>"><?php echo $post['date'];?> at <?php echo $post['time'];?></small></a>
+            <small class="font-weight-light mt-2"><a href="<?php echo site_url('/posts/'.$post['id']);?>">Posted: <?php echo $post['date'];?></small></a>
         </div>
         <!--Corps du post-->
         <div class="card-body">
@@ -101,7 +103,6 @@
         </div>
     </div>
 </div>
+    <?php $iterate ++;?>
 <?php endforeach;?>
-
-    <?php echo $pagination;?>
-
+<?php echo $pagination;?>

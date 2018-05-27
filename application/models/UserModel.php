@@ -31,4 +31,25 @@
                 return false;
             }
         }
+
+        public function follow($idUser, $idFollower){
+                $data = array(
+                    'idUser' => $idUser,
+                    'idFollower' => $idFollower
+                );
+                return $this->db->insert('follow',$data);
+        }
+
+        public function unfollow($idUser, $idFollower){
+            $data = array(
+                'idUser' => $idUser,
+                'idFollower' => $idFollower
+            );
+            return $this->db->delete('follow',$data);
+        }
+
+        public function followers($idUser){
+            $query = $this->db->query('SELECT COUNT(*) as followers FROM follow WHERE idUser = ?',$idUser);
+            return $query->result_array();
+        }
     }
