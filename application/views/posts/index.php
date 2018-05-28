@@ -90,7 +90,7 @@
                             <div class="col-10">
                                 <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $comment['photo'];?>" id="profile-image1" class=" ml-1 mt-1 mr-3 d-block img-responsive float-left" height="50" width="50">
                                     <h3 class="ml-3 mt-1"><?php echo $comment['prenom']." ".$comment['nom'];?></h3>
-                                <p class="text-secondary bg-light col-lg-6 col-sm-12"> published: <?php echo $comment['commented_at']?></p>
+                                <p class="text-secondary bg-light col-lg-6 col-sm-12 mt-3 mr-auto"> published: <?php echo $comment['commented_at']?></p>
                                 <p class="ml-3"><?php echo $comment['body'];?></p>
                             </div>
                         </div>

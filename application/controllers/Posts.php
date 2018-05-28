@@ -4,6 +4,8 @@ class Posts extends CI_Controller{
 
     public function index($offset = 0)
     {
+        $idLogged = $this->CookieModel->isLoggedIn();
+        if (isset($idLogged)){
             /*Pagination */
             $config['base_url'] = base_url() . 'posts/index/';
             $config['total_rows'] = $this->db->count_all('post');
@@ -43,13 +45,19 @@ class Posts extends CI_Controller{
             }
 
             $data['followers'] = $tmp;
-            $this->load->view('templates/header');
+            $loggedIn['loggedUser'] = $this->UserModel->getUser($idLogged);
+            $this->load->view('templates/header',$loggedIn);
             $this->load->view('posts/index', $data);
             $this->load->view('templates/footer');
+        } else {
+            redirect('users/login');
+        }
     }
 
 
     public function view($id=NULL){
+        $idLogged = $this->CookieModel->isLoggedIn();
+        if (isset($idLogged)) {
         $data['post'] = $this->PostModel->getPost($id);
         $idPost = $data['post'][0]['id'];
         $data['comments']= $this->CommentModel->getComments($idPost);
@@ -60,22 +68,33 @@ class Posts extends CI_Controller{
         $data['followers'] = $this->UserModel->followers($idUser);
         $data['followers'] = $data['followers'][0];
         $data['post'] = $data['post'][0];
-        $this->load->view('templates/header');
+        $loggedIn['loggedUser'] = $this->UserModel->getUser($idLogged);
+        $this->load->view('templates/header',$loggedIn);
         $this->load->view('posts/view',$data);
         $this->load->view('templates/footer');
+    } else {
+        redirect('users/login');
+        }
     }
 
-    public function create(){
-        $this->form_validation->set_rules('link','URL','required|callback_youtube_link');
-        $this->form_validation->set_rules('titre','Title','getVideoTitle');
 
-        if($this->form_validation->run() === FALSE){
-            $this->load->view('templates/header');
-            $this->load->view('posts/create');
-            $this->load->view('templates/footer');
-        } else {
-            $this->PostModel->createPost();
-            redirect('posts');
+    public function create(){
+        $idLogged = $this->CookieModel->isLoggedIn();
+        if (isset($idLogged)) {
+            $this->form_validation->set_rules('link', 'URL', 'required|callback_youtube_link');
+            $this->form_validation->set_rules('titre', 'Title', 'getVideoTitle');
+
+            if ($this->form_validation->run() === FALSE) {
+                $this->load->view('templates/header');
+                $this->load->view('posts/create');
+                $this->load->view('templates/footer');
+            } else {
+                $this->PostModel->createPost($idLogged);
+                redirect('posts');
+            }
+        }
+        else {
+            redirect('users/login');
         }
     }
 

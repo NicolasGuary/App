@@ -50,7 +50,7 @@
             parse_str($content, $ytarr);
             return $ytarr['title'];
         }
-        public function createPost(){
+        public function createPost($idLogged){
             $vid = $this->input->post('link');
             $id = $this->getVideoID($vid);
 
@@ -60,7 +60,7 @@
             'link' =>$id,
             'contenu' =>$this->input->post('contenu'),
             'titre' =>$this->getVideoTitle($id),
-            'idUser' =>1
+            'idUser' => $idLogged
         );
         $data = $this->security->xss_clean($data);
         $data = html_escape($data);
