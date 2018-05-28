@@ -18,17 +18,23 @@
             return $query->result_array();
         }
 
-        public function login($mail,$password){
-            //VALIDATION
-            $this->db->where('email',$mail);
-            $pass = $this->db->query('select user.mdp from user where user.email = ?',$mail);
+        public function login(){
+            /* Get inputs */
+            $mail = $this->input->post('email');
+            $mail = html_escape($mail);
+            $password = $this->input->post('mdp');
 
-            $res = password_verify($password,$pass);
-
-            if($res){
-                return $this->db->query('select user.id from user where user.email = ?',$mail);
-            } else{
-                return false;
+            /* Validate password */
+            $query = $this->db->query('select user.mdp from user where user.email = ?',$mail);
+            $pass = $query->row_array();
+            if(isset($pass['mdp'])){
+                if(password_verify($password,$pass['mdp'])){
+                    $queryId = $this->db->query('select user.id as id from user where email=?',$mail);
+                    $idUser = $queryId->row_array();
+                    return $idUser['id'];
+                } else {
+                    return false;
+                }
             }
         }
 

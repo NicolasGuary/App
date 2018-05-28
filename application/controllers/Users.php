@@ -39,8 +39,8 @@
         }
 
         public function login(){
-            $this->form_validation->set_rules('email','Email','callback_user_check|required|valid_email');
-            $this->form_validation->set_rules('mdp','Password','callback_user_check|required|min_length[7]');
+            $this->form_validation->set_rules('email','Email','required|valid_email');
+            $this->form_validation->set_rules('mdp','Password','required|min_length[7]');
 
             if($this->form_validation->run() === FALSE){
                 $this->load->view('templates/header');
@@ -48,36 +48,34 @@
                 $this->load->view('templates/footer');
             }
             else {
-                /* Get user email */
-                $mail = $this->input->post('email');
-
-                /* Get input user password */
-                $pass = $this->input->post('mdp');
-
-                //Login user
-                $idUser = $this->UserModel->login($mail,$pass);
-
-                if($idUser){
+                if($this->UserModel->login()){
                     //SET COOKIE
-                    die('SUCCESS');
-                    redirect('posts');
-                } else{
-                  //  log_message('error', 'Wrong email and/or password !');
-                    redirect('users/login');
-                }
+                    $idUser = $this->UserModel->login();
+                    $cstrong = true;
+                    $token = bin2hex(openssl_random_pseudo_bytes(64,$cstrong));
+                    $values = array(
+                      'idUser' => $idUser,
+                      'token' => $token
+                    );
 
+                    $this->input->set_cookie('LoginToken', json_encode($values), time() + (60 * 60 * 24 * 7), '' ,'/', '',null, true);
+
+                    $this->CookieModel->setCookie($idUser,$token);
+                    redirect('posts');
+                } else {
+                  //SHOW ERROR WRONG PASSWORD OR EMAIL
+                    $this->load->view('templates/header');
+                    $this->load->view('errors/errorLog');
+                    $this->load->view('users/login');
+                    $this->load->view('templates/footer');
+
+                }
             }
         }
 
-        public function user_check($idUser){
-            if($idUser){
-                return true;
-                die('SUCCESS');
-                //redirect('posts');
-            } else {
-                $this->form_validation->set_message('user_check', 'Invalid email and/or password.');
-                return false;
-            }
+        public function logout(){
+            $this->CookieModel->deleteCookie();
+            $this->load->view('index');
         }
 
         public function profile($idUser){

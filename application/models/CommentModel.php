@@ -7,7 +7,7 @@
         public function createComment($idPost){
             $data= array(
                 'idPost' => $idPost,
-                'idUser' => $this->input->post('idUser'), //chercher id de l'user qui poste le commentaire dans db
+                'idUser' => $this->input->post('idUser'), //chercher id de l'user qui poste le commentaire dans cookie
                 'body'=> $this->input->post('body')
             );
             $data = $this->security->xss_clean($data);

@@ -5,7 +5,7 @@
                 <h1 class="title mt-5"><span>Join MANT !</span> </h1>
                 <hr>
 
-                <?php echo validation_errors('<p class="text-danger text-center font-weight-bold mt-2">','</p>');?>
+                <?php echo validation_errors('<div class="text-center mx-auto"><p class="badge badge-danger mt-2">','</p></div>');?>
                 <?php echo form_open_multipart('users/register');?>
                 <form class="form-horizontal" method="post" name="signup" id="signup" action="<?php base_url();?>users/register" enctype="multipart/form-data" >
                     <div class="form-group">

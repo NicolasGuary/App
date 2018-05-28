@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-lg-10 col-sm-12">
                     <div class="form-group">
-                        <?php echo validation_errors('<p class="text-danger text-center font-weight-bold mt-2">','</p>');?>
+                        <?php echo validation_errors('<div class="text-center mx-auto"><p class="badge badge-danger mt-2">','</p></div>');?>
                         <?php echo form_open('comments/create/'.$post['id']); ?>
                         <div class="row">
                             <textarea class=" ml-3 form-control mt-1 col-10" type="text" name="body" rows="1" placeholder="Comment..."></textarea>

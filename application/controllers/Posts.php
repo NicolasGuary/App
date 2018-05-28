@@ -2,51 +2,51 @@
 
 class Posts extends CI_Controller{
 
-    public function index($offset = 0){
-        /*Pagination */
-        $config['base_url'] = base_url().'posts/index/';
-        $config['total_rows'] = $this->db->count_all('post');
-        $config['per_page'] = 10;
-        $config['uri_segment'] = 3;
+    public function index($offset = 0)
+    {
+            /*Pagination */
+            $config['base_url'] = base_url() . 'posts/index/';
+            $config['total_rows'] = $this->db->count_all('post');
+            $config['per_page'] = 10;
+            $config['uri_segment'] = 3;
 
-        /*STYLE*/
-        $config['attributes'] = array('class' => 'page-link');
-        $config['full_tag_open'] = '<nav> <ul class="pagination justify-content-center">';
-        $config['full_tag_close'] = '</ul></nav>';
-        $config['first_tag_open'] = '<li class="page-item">';
-        $config['first_tag_close'] = '</li>';
-        $config['prev_link'] = '&laquo';
-        $config['prev_tag_open'] = '<li class="prev page-item">';
-        $config['prev_tag_close'] = '</li>';
-        $config['next_link'] = '&raquo';
-        $config['next_tag_open'] = '<li class="page-item">';
-        $config['next_tag_close'] = '</li>';
-        $config['last_tag_open'] = '<li class="page-item">';
-        $config['last_tag_close'] = '</li>';
-        $config['cur_tag_open'] = '<li class="active page-item"><a class="page-link" href="#">';
-        $config['cur_tag_close'] = '</a></li>';
-        $config['num_tag_open'] = '<li class="page-item">';
-        $config['num_tag_close'] = '</li>';
+            /*STYLE*/
+            $config['attributes'] = array('class' => 'page-link');
+            $config['full_tag_open'] = '<nav> <ul class="pagination justify-content-center">';
+            $config['full_tag_close'] = '</ul></nav>';
+            $config['first_tag_open'] = '<li class="page-item">';
+            $config['first_tag_close'] = '</li>';
+            $config['prev_link'] = '&laquo';
+            $config['prev_tag_open'] = '<li class="prev page-item">';
+            $config['prev_tag_close'] = '</li>';
+            $config['next_link'] = '&raquo';
+            $config['next_tag_open'] = '<li class="page-item">';
+            $config['next_tag_close'] = '</li>';
+            $config['last_tag_open'] = '<li class="page-item">';
+            $config['last_tag_close'] = '</li>';
+            $config['cur_tag_open'] = '<li class="active page-item"><a class="page-link" href="#">';
+            $config['cur_tag_close'] = '</a></li>';
+            $config['num_tag_open'] = '<li class="page-item">';
+            $config['num_tag_close'] = '</li>';
 
-        /*CONFIG LOAD*/
-        $this->pagination->initialize($config);
+            /*CONFIG LOAD*/
+            $this->pagination->initialize($config);
 
-        $data['posts'] = $this->PostModel->getPosts($config['per_page'], $offset);
-        $data['comments']= $this->CommentModel->getAllComments();
-        $data['pagination'] = $this->pagination->create_links();
+            $data['posts'] = $this->PostModel->getPosts($config['per_page'], $offset);
+            $data['comments'] = $this->CommentModel->getAllComments();
+            $data['pagination'] = $this->pagination->create_links();
+            foreach ($data['posts'] as $post) {
+                $idPost = $post['id'];
+                $idUser = $this->PostModel->getAuthor($idPost);
+                $idUser = intval($idUser[0]['idUser']);
+                $tmp[] = $this->UserModel->followers($idUser);
+            }
 
-        foreach ($data['posts'] as $post){
-            $idPost = $post['id'];
-            $idUser = $this->PostModel->getAuthor($idPost);
-            $idUser = intval($idUser[0]['idUser']);
-            $tmp[] = $this->UserModel->followers($idUser);
-        }
-
-        $data['followers'] = $tmp;
-        $this->load->view('templates/header');
-        $this->load->view('posts/index',$data);
-        $this->load->view('templates/footer');
-        }
+            $data['followers'] = $tmp;
+            $this->load->view('templates/header');
+            $this->load->view('posts/index', $data);
+            $this->load->view('templates/footer');
+    }
 
 
     public function view($id=NULL){
