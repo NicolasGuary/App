@@ -83,9 +83,9 @@ class Posts extends CI_Controller{
         if (isset($idLogged)) {
             $this->form_validation->set_rules('link', 'URL', 'required|callback_youtube_link');
             $this->form_validation->set_rules('titre', 'Title', 'getVideoTitle');
-
             if ($this->form_validation->run() === FALSE) {
-                $this->load->view('templates/header');
+                $loggedIn['loggedUser'] = $this->UserModel->getUser($idLogged);
+                $this->load->view('templates/header',$loggedIn);
                 $this->load->view('posts/create');
                 $this->load->view('templates/footer');
             } else {

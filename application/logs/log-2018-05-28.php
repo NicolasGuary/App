@@ -203,3 +203,25 @@ ERROR - 2018-05-28 16:00:11 --> Severity: Notice --> Undefined variable: loggedU
 ERROR - 2018-05-28 16:00:22 --> Severity: Notice --> Undefined variable: loggedUser /Applications/MAMP/htdocs/App/application/views/templates/header.php 22
 ERROR - 2018-05-28 16:00:36 --> Severity: Notice --> Undefined variable: loggedUser /Applications/MAMP/htdocs/App/application/views/templates/header.php 22
 ERROR - 2018-05-28 16:21:09 --> Severity: error --> Exception: syntax error, unexpected end of file, expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) /Applications/MAMP/htdocs/App/application/views/templates/header.php 54
+ERROR - 2018-05-28 17:00:44 --> 404 Page Not Found: 
+ERROR - 2018-05-28 17:01:26 --> 404 Page Not Found: Users/view
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:13:26 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/posts/index.php 92
+ERROR - 2018-05-28 17:40:01 --> Severity: Notice --> Undefined index: idUser /Applications/MAMP/htdocs/App/application/views/users/profile.php 8

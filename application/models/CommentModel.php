@@ -17,7 +17,7 @@
 
         public function getComments($idPost){
             $query = $this->db->query(
-                'SELECT comment.id, comment.body, comment.idPost, comment.commented_at, user.id, user.nom, user.prenom, user.photo, post.id 
+                'SELECT comment.id, comment.body, comment.idPost, comment.idUser, comment.commented_at, user.id, user.nom, user.prenom, user.photo, post.id 
                  FROM comment, user, post 
                  WHERE comment.idPost = post.id and post.id = ? and comment.idUser = user.id 
                  ORDER BY comment.id DESC',array($idPost));
@@ -26,7 +26,7 @@
 
         public function getAllComments(){
             $query = $this->db->query(
-            'SELECT comment.id, comment.body, comment.idPost, comment.commented_at, user.id, user.nom, user.prenom, user.photo, post.id 
+            'SELECT comment.id, comment.body, comment.idPost, comment.idUser, comment.commented_at, user.id, user.nom, user.prenom, user.photo, post.id 
              FROM comment, user, post 
              WHERE comment.idPost = post.id and comment.idUser = user.id 
              ORDER BY comment.id DESC');

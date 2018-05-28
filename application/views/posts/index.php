@@ -42,8 +42,8 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-12">
-                    <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $post['photo'];?>" id="profile-image1" class="ml-auto mr-4 d-block img-circle img-responsive float-left" height="70" width="70">
-                    <h3 class="text-uppercase font-weight-bold"><?php echo $post['prenom']." ".$post['nom'];?></h3>
+                    <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $post['photo'];?>" id="profile-image1" class="ml-auto mr-4 d-block img-thumbnail img-responsive float-left" height="70" width="70">
+                    <h2><span class="text-uppercase font-weight-bold"><a class="text-dark bio" href="<?php echo site_url('/users/'.$post['idUser']);?>"><?php echo $post['prenom']." ".$post['nom'];?></span></h2></a>
                     <?php echo form_open('users/follow/'.$post['idUser']);?>
                     <button type="submit" name="follow" value="follow" class="badge badge-secondary">Follow</button>
                     <span class="badge badge-pill badge-primary"><?php echo $followers[$iterate][0]['followers'];?> Followers</span>
@@ -88,9 +88,11 @@
                     <div class="card mb-2">
                         <div class="row">
                             <div class="col-10">
-                                <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $comment['photo'];?>" id="profile-image1" class=" ml-1 mt-1 mr-3 d-block img-responsive float-left" height="50" width="50">
-                                    <h3 class="ml-3 mt-1"><?php echo $comment['prenom']." ".$comment['nom'];?></h3>
-                                <p class="text-secondary bg-light col-lg-6 col-sm-12 mt-3 mr-auto"> published: <?php echo $comment['commented_at']?></p>
+                                <div class="col-4">
+                                    <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $comment['photo'];?>" id="profile-image1" class=" ml-1 mt-1 mr-3 d-block img-thumbnail img-responsive float-left" height="50" width="50">
+                                </div>
+                                <h3><span class="mt2 mb-2 badge badge-light"><a class="bio" href="<?php echo site_url('/users/'.$comment['idUser']);?>"><?php echo $comment['prenom']." ".$comment['nom'];?></span></h3></a>
+                                <p class="text-secondary col-lg-6 col-sm-12 mt-3 mr-auto"> published: <?php echo $comment['commented_at']?></p>
                                 <p class="ml-3"><?php echo $comment['body'];?></p>
                             </div>
                         </div>
