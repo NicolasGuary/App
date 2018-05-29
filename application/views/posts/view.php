@@ -6,10 +6,24 @@
                 <div class="col-12">
                     <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $post['photo'];?>" id="profile-image1" class="ml-auto mr-4 d-block img-thumbnail img-responsive float-left" height="70" width="70">
                     <h1><span class="text-uppercase font-weight-bold"><a class="text-dark bio" href="<?php echo site_url('/users/'.$post['idUser']);?>"><?php echo $post['prenom']." ".$post['nom'];?></span></h1></a>
-                    <?php echo form_open('users/follow/'.$post['idUser']);?>
-                    <button type="submit" name="follow" value="follow"  class="badge badge-secondary">Follow</button>
-                    <span class="badge badge-pill badge-primary"><?php echo $followers['followers'];?> Followers</span>
-                    <?php echo form_close();?>
+                    <!-- Follow/Unfollow button according to the state in database for current user -->
+                    <?php if (!isset($state['state'])) : ;?>
+                        <?php echo form_open('users/follow/'.$post['idUser']);?>
+                        <button type="submit" name="follow" value="follow"  class="badge badge-secondary">Follow</button>
+                        <span class="badge badge-pill badge-primary"><?php echo $followers['followers'];?> Followers</span>
+                        <?php echo form_close();?>
+                    <?php elseif (intval($state['state']) == 0) :;?>
+                        <?php echo form_open('users/follow/'.$post['idUser']);?>
+                        <button type="submit" name="follow" value="follow"  class="badge badge-secondary">Follow</button>
+                        <span class="badge badge-pill badge-primary"><?php echo $followers['followers'];?> Followers</span>
+                        <?php echo form_close();?>
+                    <?php else : ;?>
+                        <?php echo form_open('users/unfollow/'.$post['idUser']);?>
+                        <button type="submit" name="follow" value="follow"  class="badge badge-light">Unfollow</button>
+                        <span class="badge badge-pill badge-primary"><?php echo $followers['followers'];?> Followers</span>
+                        <?php echo form_close();?>
+                    <?php endif;?>
+                    <!--END FOLLOW-->
                 </div>
             </div>
             <small class="font-weight-light mt-2"><a href="<?php echo site_url('/posts/'.$post['id']);?>">Posted: <?php echo $post['date'];?></small></a>
@@ -21,9 +35,27 @@
             <hr>
             <p class="bg-light mt-2 text-center"><?php echo $post['contenu']; ?></p>
             <div class="row">
-                <div class="col-lg-2 col-sm-4">
-                    <a href="#" class="btn btn-primary mt-1 mb-2"> Like <span class="ml-1 badge badge-light">471</span></a>
-                </div>
+                <!-- Like/Unlike button according to the state in database for current post -->
+                <?php if (!isset($stateLike['state'])) : ;?>
+                    <?php echo form_open('posts/like/'.$post['id']);?>
+                    <div class="col-lg-2 col-sm-4">
+                        <button type="submit" class="btn btn-primary mt-1 mb-2"> Like <span class="ml-1 badge badge-light"><?php echo $likes['likes'];?></span></button>
+                    </div>
+                    <?php echo form_close();?>
+                <?php elseif (intval($stateLike['state']) == 0) :;?>
+                    <?php echo form_open('posts/like/'.$post['id']);?>
+                    <div class="col-lg-2 col-sm-4">
+                        <button type="submit" class="btn btn-primary mt-1 mb-2"> Like <span class="ml-1 badge badge-light"><?php echo $likes['likes'];?></span></button>
+                    </div>
+                    <?php echo form_close();?>
+                <?php else : ;?>
+                    <?php echo form_open('posts/unlike/'.$post['id']);?>
+                    <div class="col-lg-2 col-sm-4">
+                        <button type="submit" class="btn btn-outline-primary mt-1 mb-2"> Liked <span class="ml-1 badge badge-light"><?php echo $likes['likes'];?></span></button>
+                    </div>
+                    <?php echo form_close();?>
+                <?php endif;?>
+                <!--END LIKE-->
                 <div class="col-lg-10 col-sm-12">
                     <div class="form-group">
                         <?php echo validation_errors('<div class="text-center mx-auto"><p class="badge badge-danger mt-2">','</p></div>');?>

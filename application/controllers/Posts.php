@@ -42,8 +42,15 @@ class Posts extends CI_Controller{
                 $idUser = $this->PostModel->getAuthor($idPost);
                 $idUser = intval($idUser[0]['idUser']);
                 $tmp[] = $this->UserModel->followers($idUser);
-            }
+                $state_tmp[] = $this->UserModel->getState($idUser,$idLogged);
 
+                $statelike_tmp[] = $this->PostModel->getState($post['id'],$idLogged);
+                $likes_tmp[] = $this->PostModel->getLikes($post['id']);
+            }
+            $data['stateLike'] = $statelike_tmp;
+            $data['likes'] = $likes_tmp;
+
+            $data['state'] = $state_tmp;
             $data['followers'] = $tmp;
             $loggedIn['loggedUser'] = $this->UserModel->getUser($idLogged);
             $this->load->view('templates/header',$loggedIn);
@@ -58,22 +65,32 @@ class Posts extends CI_Controller{
     public function view($id=NULL){
         $idLogged = $this->CookieModel->isLoggedIn();
         if (isset($idLogged)) {
-        $data['post'] = $this->PostModel->getPost($id);
-        $idPost = $data['post'][0]['id'];
-        $data['comments']= $this->CommentModel->getComments($idPost);
-        if(empty($data['post'])){
-            show_404();
-        }
-        $idUser = $this->PostModel->getAuthor($idPost);
-        $data['followers'] = $this->UserModel->followers($idUser);
-        $data['followers'] = $data['followers'][0];
-        $data['post'] = $data['post'][0];
-        $loggedIn['loggedUser'] = $this->UserModel->getUser($idLogged);
-        $this->load->view('templates/header',$loggedIn);
-        $this->load->view('posts/view',$data);
-        $this->load->view('templates/footer');
-    } else {
-        redirect('users/login');
+            $data['post'] = $this->PostModel->getPost($id);
+            $idPost = $data['post'][0]['id'];
+            $data['comments']= $this->CommentModel->getComments($idPost);
+            if(empty($data['post'])){
+                show_404();
+            }
+
+            $idUser = $this->PostModel->getAuthor($idPost);
+            $data['post'] = $data['post'][0];
+            $loggedIn['loggedUser'] = $this->UserModel->getUser($idLogged);
+
+            /*follow related */
+            $data['followers'] = $this->UserModel->followers($idUser);
+            $data['followers'] = $data['followers'][0];
+            $data['state'] = $this->UserModel->getState($idUser[0],$idLogged);
+
+            /*like related */
+            $data['likes'] = $this->PostModel->getLikes($idPost);
+            $data['stateLike'] = $this->PostModel->getState($idPost,$idLogged);
+
+
+            $this->load->view('templates/header',$loggedIn);
+            $this->load->view('posts/view',$data);
+            $this->load->view('templates/footer');
+        } else {
+            redirect('users/login');
         }
     }
 
@@ -105,5 +122,25 @@ class Posts extends CI_Controller{
         }
         $this->form_validation->set_message('youtube_link', 'Should be a valid YouTube link.');
         return false;
+    }
+
+    public function like($idPost = false)
+    {
+        $idLogged = $this->CookieModel->isLoggedIn();
+        if ((isset($idLogged))) {
+            $this->PostModel->like($idPost, $idLogged);
+            $link = base_url().'posts/'.$idPost;
+            redirect($link);
+        }
+    }
+
+    public function unlike($idPost = false)
+    {
+        $idLogged = $this->CookieModel->isLoggedIn();
+        if ((isset($idLogged))) {
+            $this->PostModel->unlike($idPost, $idLogged);
+            $link = base_url().'posts/'.$idPost;
+            redirect($link);
+        }
     }
 }

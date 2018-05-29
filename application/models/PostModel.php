@@ -66,4 +66,37 @@
         $data = html_escape($data);
         return $this->db->insert('post',$data);
         }
+
+        /* STATE 1 = LIKED STATE 0 = UNLIKED */
+        public function like($idPost, $idLiker){
+            if($idPost == $idLiker){
+                // DO NOTHING
+            } else {
+                $exists =  $query = $this->db->query('SELECT state FROM likers WHERE idPost = ? AND idLiker = ?', array($idPost,$idLiker))->row_array();
+                if(isset($exists)){
+                    return $this->db->query('UPDATE likers SET state = 1 WHERE idPost = ? AND idLiker = ?', array($idPost,$idLiker));
+                } else {
+                    $data = array(
+                        'idPost' => $idPost,
+                        'idLiker' => $idLiker,
+                        'state' => 1
+                    );
+                    return $this->db->insert('likers',$data);
+                }
+            }
+        }
+
+        public function unlike($idPost, $idLiker){
+            return $this->db->query('UPDATE likers SET state = 0 WHERE idPost = ? AND idLiker = ?', array($idPost,$idLiker));
+        }
+
+        public function getState($idPost, $idLiker){
+            $query = $this->db->query('SELECT state FROM likers WHERE idPost = ? AND idLiker = ?', array($idPost,$idLiker));
+            return $query->row_array();
+        }
+
+        public function getLikes($idPost){
+            $query = $this->db->query('SELECT COUNT(*) as likes FROM likers WHERE idPost = ? AND STATE = 1',$idPost);
+            return $query->row_array();
+        }
     }

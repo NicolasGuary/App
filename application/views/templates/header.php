@@ -22,7 +22,8 @@
             <a class="nav-item nav-link active" href=<?php echo base_url();?>users/<?php echo $loggedUser[0]['id'];?>>Profile</a>
             <?php endif;?>
             <a class="nav-item nav-link active" href="<?php echo base_url();?>posts/create">Post</a>
-            <a class="nav-item nav-link active" href="<?php echo base_url();?>">About us</a>
+            <a class="nav-item nav-link active" href="<?php echo base_url();?>">Following</a>
+            <a class="nav-item nav-link active" href="<?php echo base_url();?>">Followers</a>
         </div>
 
         <?php if(isset($loggedUser)) : ;?>

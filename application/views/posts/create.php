@@ -1,5 +1,5 @@
 <?php echo form_open('posts/create');?>
- <?php echo validation_errors('<p class="text-danger text-center font-weight-bold mt-2">','</p>');?>
+<?php echo validation_errors('<div class="text-center mx-auto"><p class="badge badge-danger mt-2">','</p></div>');?>
 
 <div class="card col-10 mx-auto mt-3 mb-5">
         <div class="container mt-3 mb-5">
