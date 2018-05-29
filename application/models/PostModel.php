@@ -31,6 +31,17 @@
             return $query->result_array();
         }
 
+        public function countUsersPosts($idUser){
+            $query = $this->db->query(
+                'SELECT count(*)
+            FROM post, user
+            WHERE user.id=?
+            AND user.id = post.idUser 
+            ORDER BY post.id DESC
+            ',array($idUser));
+            return $query->row_array();
+        }
+
         public function getAuthor($idPost){
             $query = $this->db->query('SELECT idUser FROM post WHERE id = ?',$idPost);
             return $query->result_array();

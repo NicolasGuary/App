@@ -37,21 +37,22 @@ class Posts extends CI_Controller{
             $data['posts'] = $this->PostModel->getPosts($config['per_page'], $offset);
             $data['comments'] = $this->CommentModel->getAllComments();
             $data['pagination'] = $this->pagination->create_links();
+            /*making an array with all the likes and follow */
             foreach ($data['posts'] as $post) {
                 $idPost = $post['id'];
                 $idUser = $this->PostModel->getAuthor($idPost);
                 $idUser = intval($idUser[0]['idUser']);
                 $tmp[] = $this->UserModel->followers($idUser);
                 $state_tmp[] = $this->UserModel->getState($idUser,$idLogged);
-
                 $statelike_tmp[] = $this->PostModel->getState($post['id'],$idLogged);
                 $likes_tmp[] = $this->PostModel->getLikes($post['id']);
-            }
-            $data['stateLike'] = $statelike_tmp;
-            $data['likes'] = $likes_tmp;
 
-            $data['state'] = $state_tmp;
-            $data['followers'] = $tmp;
+                $data['stateLike'] = $statelike_tmp;
+                $data['likes'] = $likes_tmp;
+                $data['state'] = $state_tmp;
+                $data['followers'] = $tmp;
+            }
+
             $loggedIn['loggedUser'] = $this->UserModel->getUser($idLogged);
             $this->load->view('templates/header',$loggedIn);
             $this->load->view('posts/index', $data);

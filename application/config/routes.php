@@ -3,6 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['users/logout'] = 'users/logout';
 $route['users/follow'] = 'users/follow';
+$route['users/following/(:any)'] = 'users/following/$1';
+$route['users/followers/(:any)'] = 'users/followers/$1';
 $route['users/register'] = 'users/register';
 $route['users/login'] = 'users/login';
 $route['users/(:any)'] = 'users/profile/$1';

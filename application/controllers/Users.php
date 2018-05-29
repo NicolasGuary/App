@@ -110,12 +110,15 @@ class Users extends CI_Controller
             $data['amountFollowerAccounts'] = $this->UserModel->countFollowerAccounts($idUser);
 
             /*Like related*/
-            foreach ($data['posts'] as $post){
-                $state_tmp[] = $this->PostModel->getState($post['id'],$idLogged);
-                $likes_tmp[] = $this->PostModel->getLikes($post['id']);
+            if($this->PostModel->countUsersPosts($idUser) != 0){
+                foreach ($data['posts'] as $post){
+                    $state_tmp[] = $this->PostModel->getState($post['id'],$idLogged);
+                    $likes_tmp[] = $this->PostModel->getLikes($post['id']);
+                    $data['stateLike'] = $state_tmp;
+                    $data['likes'] = $likes_tmp;
+                }
             }
-            $data['stateLike'] = $state_tmp;
-            $data['likes'] = $likes_tmp;
+
             $this->load->view('templates/header', $loggedIn);
             $this->load->view('users/profile', $data);
             $this->load->view('templates/footer');
@@ -141,6 +144,54 @@ class Users extends CI_Controller
             $this->UserModel->unfollow($idUser, $idLogged);
             $link = base_url().'users/'.$idUser;
             redirect($link);
+        }
+    }
+
+    public function following($idUser= false){
+        {
+            $idLogged = $this->CookieModel->isLoggedIn();
+            if ((isset($idLogged))) {
+                $data['user'] = $this->UserModel->getUser($idUser);
+                $data['user'] = $data['user'][0];
+                $data['followers'] = $this->UserModel->followers($idUser);
+                $data['followers'] = $data['followers'][0];
+                $loggedIn['loggedUser'] = $this->UserModel->getUser($idLogged);
+
+                /* Follow related */
+                $data['state'] = $this->UserModel->getState($idUser,$idLogged);
+                $data['followingAccounts'] = $this->UserModel->getFollowingAccounts($idUser);
+                $data['amountFollowingAccounts'] = $this->UserModel->countFollowingAccounts($idUser);
+
+                $this->load->view('templates/header', $loggedIn);
+                $this->load->view('users/following', $data);
+                $this->load->view('templates/footer');
+            } else {
+                redirect('posts');
+            }
+        }
+    }
+
+    public function followers($idUser= false){
+        {
+            $idLogged = $this->CookieModel->isLoggedIn();
+            if ((isset($idLogged))) {
+                $data['user'] = $this->UserModel->getUser($idUser);
+                $data['user'] = $data['user'][0];
+                $data['followers'] = $this->UserModel->followers($idUser);
+                $data['followers'] = $data['followers'][0];
+                $loggedIn['loggedUser'] = $this->UserModel->getUser($idLogged);
+
+                /* Follow related */
+                $data['state'] = $this->UserModel->getState($idUser,$idLogged);
+                $data['followersAccounts'] = $this->UserModel->getFollowersAccounts($idUser);
+                $data['amountFollowerAccounts'] = $this->UserModel->countFollowerAccounts($idUser);
+
+                $this->load->view('templates/header', $loggedIn);
+                $this->load->view('users/followers', $data);
+                $this->load->view('templates/footer');
+            } else {
+                redirect('posts');
+            }
         }
     }
 }

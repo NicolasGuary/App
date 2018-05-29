@@ -74,13 +74,12 @@ class UserModel extends CI_Model{
         return $query->result_array();
     }
 
-    /*We are limiting to 6 entries as this is just for display purposes only on the user's profile */
     public function getFollowingAccounts($idUser){
         $query = $this->db->query('SELECT user.nom, user.prenom, user.photo, user.id
         FROM follow, user
         WHERE follow.idUser = user.id
         AND idFollower = ? AND STATE = 1
-        LIMIT 6',$idUser);
+        ORDER BY follow.id DESC',$idUser);
         return $query->result_array();
     }
 
@@ -92,13 +91,12 @@ class UserModel extends CI_Model{
         return $query->result_array();
     }
 
-    /*We are limiting to 6 entries as this is just for display purposes only on the user's profile */
     public function getFollowersAccounts($idUser){
         $query = $this->db->query('SELECT  user.nom, user.prenom, user.photo, user.id
         FROM follow, user
         WHERE follow.idFollower = user.id
         AND idUser = ? AND STATE = 1
-        LIMIT 6',$idUser);
+        ORDER BY follow.id DESC',$idUser);
         return $query->result_array();
     }
 

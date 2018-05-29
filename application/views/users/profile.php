@@ -32,28 +32,36 @@
 </div>
 <!--ACCOUNT FOLLOWED BY THE USER-->
 <div class="col-11 mx-auto">
-    <h2 class="text-center">Following (<?php echo $amountFollowingAccounts[0]['amount'];?>)</h2>
+    <h2 class="text-center"><a class="text-dark bio" href="<?php echo site_url('/users/following/'.$user['id']);?>">Following (<?php echo $amountFollowingAccounts[0]['amount'];?>)</h2></a>
     <div class="row ">
-    <?php foreach ($followingAccounts as $followed) : ?>
-        <div class="col-3 mb-2">
-            <div class="card hover-shadow h-100">
-                <div class="card-body text-center mx-auto">
-                    <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $followed['photo'];?>" id="profile-image1" class="d-block img-thumbnail img-responsive float-left " height="100" width="100">
+        <?php $cpt = 0;?>
+        <?php foreach ($followingAccounts as $followed) : ?>
+            <?php if($cpt>7){ break;};?>
+            <div class="col-3 mb-2">
+                <div class="card hover-shadow h-100">
+                    <div class="card-body text-center mx-auto">
+                        <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $followed['photo'];?>" id="profile-image1" class="d-block img-thumbnail img-responsive float-left " height="100" width="100">
+                    </div>
+                    <footer class="card-footer text-center">
+                        <p class="mt-2"><a class="hover-primary" href="<?php echo site_url('/users/'.$followed['id']);?>"><?php echo $followed['prenom']." ".$followed['nom'];?></a></p>
+                    </footer>
                 </div>
-                <footer class="card-footer text-center">
-                    <p class="mt-2"><a class="hover-primary" href="<?php echo site_url('/users/'.$followed['id']);?>"><?php echo $followed['prenom']." ".$followed['nom'];?></a></p>
-                </footer>
             </div>
-        </div>
-    <?php endforeach;?>
+            <?php $cpt++;?>
+        <?php endforeach;?>
     </div>
 </div>
+<?php if($amountFollowingAccounts[0]['amount'] ==0) : ?>
+    <p class="text-center">Not following anyone yet.</p>
+<?php endif;?>
 <hr />
 <!--USER'S FOLLOWERS-->
 <div class="col-11 mx-auto">
-    <h2 class="text-center">Followers (<?php echo $amountFollowerAccounts[0]['amount'];?>)</h2>
+    <h2 class="text-center"><a class="text-dark bio" href="<?php echo site_url('/users/followers/'.$user['id']);?>">Followers (<?php echo $amountFollowerAccounts[0]['amount'];?>)</h2></a>
     <div class="row ">
+        <?php $tmp = 0;?>
         <?php foreach ($followersAccounts as $follows) : ?>
+            <?php if($tmp>7) { break;};?>
             <div class="col-3 mb-2">
                 <div class="card hover-shadow h-100">
                     <div class="card-body text-center mx-auto">
@@ -64,14 +72,19 @@
                     </footer>
                 </div>
             </div>
+            <?php $tmp ++;?>
         <?php endforeach;?>
     </div>
 </div>
+<?php if($amountFollowerAccounts[0]['amount'] ==0) : ?>
+    <p class="text-center">No followers yet.</p>
+<?php endif;?>
 <hr />
 <!--RECENT POSTS SECTION -->
 <h2 class="text-center mb-3">Recent posts</h2>
 <?php $iterate = 0;?>
 <?php foreach ($posts as $post) : ?>
+    <?php if($iterate>4) { break;};?>
     <div class ="container col-lg-9 col-md-9 col-sm-9 mb-3 mt-2">
         <div class="card h-50">
             <!--BODY POST-->

@@ -1,3 +1,4 @@
+<div class="text-center"> <small class="text-muted">"Hear The World" features all the posts from the users on MANT, even if you don't follow them. It's time to discover new music ! </small> </div>
 <div class="text-center mt-3 mb-3">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#postTrack">
         Create a new post !

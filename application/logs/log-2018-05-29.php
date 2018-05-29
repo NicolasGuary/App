@@ -151,3 +151,42 @@ ERROR - 2018-05-29 20:02:59 --> Severity: Notice --> Undefined variable: likes /
 ERROR - 2018-05-29 20:02:59 --> Severity: Notice --> Undefined variable: likes /Applications/MAMP/htdocs/App/application/views/posts/index.php 81
 ERROR - 2018-05-29 20:02:59 --> Severity: Notice --> Undefined variable: likes /Applications/MAMP/htdocs/App/application/views/posts/index.php 81
 ERROR - 2018-05-29 20:02:59 --> Severity: Notice --> Undefined variable: likes /Applications/MAMP/htdocs/App/application/views/posts/index.php 81
+ERROR - 2018-05-29 22:40:24 --> Severity: Warning --> Use of undefined constant cpt - assumed 'cpt' (this will throw an Error in a future version of PHP) /Applications/MAMP/htdocs/App/application/views/users/profile.php 39
+ERROR - 2018-05-29 22:40:24 --> Severity: Warning --> Use of undefined constant cpt - assumed 'cpt' (this will throw an Error in a future version of PHP) /Applications/MAMP/htdocs/App/application/views/users/profile.php 39
+ERROR - 2018-05-29 22:40:24 --> Severity: Warning --> Use of undefined constant cpt - assumed 'cpt' (this will throw an Error in a future version of PHP) /Applications/MAMP/htdocs/App/application/views/users/profile.php 39
+ERROR - 2018-05-29 22:40:24 --> Severity: Warning --> Use of undefined constant cpt - assumed 'cpt' (this will throw an Error in a future version of PHP) /Applications/MAMP/htdocs/App/application/views/users/profile.php 39
+ERROR - 2018-05-29 22:40:56 --> Severity: Notice --> Undefined variable: state_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 117
+ERROR - 2018-05-29 22:40:56 --> Severity: Notice --> Undefined variable: likes_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 118
+ERROR - 2018-05-29 22:41:12 --> Severity: Notice --> Undefined variable: state_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 117
+ERROR - 2018-05-29 22:41:12 --> Severity: Notice --> Undefined variable: likes_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 118
+ERROR - 2018-05-29 22:42:32 --> Severity: Notice --> Undefined variable: state_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 118
+ERROR - 2018-05-29 22:42:32 --> Severity: Notice --> Undefined variable: likes_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 119
+ERROR - 2018-05-29 22:43:13 --> Severity: Notice --> Undefined variable: state_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 118
+ERROR - 2018-05-29 22:43:13 --> Severity: Notice --> Undefined variable: likes_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 119
+ERROR - 2018-05-29 22:44:35 --> Severity: Notice --> Undefined variable: state_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 118
+ERROR - 2018-05-29 22:44:35 --> Severity: Notice --> Undefined variable: likes_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 119
+ERROR - 2018-05-29 22:45:10 --> Severity: Notice --> Undefined variable: state_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 123
+ERROR - 2018-05-29 22:45:10 --> Severity: Notice --> Undefined variable: likes_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 124
+ERROR - 2018-05-29 22:48:20 --> Severity: Notice --> Undefined variable: state_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 118
+ERROR - 2018-05-29 22:48:20 --> Severity: Notice --> Undefined variable: likes_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 119
+ERROR - 2018-05-29 22:48:29 --> Severity: Notice --> Undefined variable: state_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 118
+ERROR - 2018-05-29 22:48:29 --> Severity: Notice --> Undefined variable: likes_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 119
+ERROR - 2018-05-29 22:49:18 --> Severity: Notice --> Undefined variable: state_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 118
+ERROR - 2018-05-29 22:49:18 --> Severity: Notice --> Undefined variable: likes_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 119
+ERROR - 2018-05-29 22:49:22 --> Severity: Notice --> Undefined variable: state_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 118
+ERROR - 2018-05-29 22:49:22 --> Severity: Notice --> Undefined variable: likes_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 119
+ERROR - 2018-05-29 22:49:30 --> Severity: Notice --> Undefined variable: state_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 118
+ERROR - 2018-05-29 22:49:30 --> Severity: Notice --> Undefined variable: likes_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 119
+ERROR - 2018-05-29 22:49:38 --> Severity: Notice --> Undefined variable: state_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 118
+ERROR - 2018-05-29 22:49:38 --> Severity: Notice --> Undefined variable: likes_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 119
+ERROR - 2018-05-29 22:49:42 --> Severity: Notice --> Undefined variable: state_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 118
+ERROR - 2018-05-29 22:49:42 --> Severity: Notice --> Undefined variable: likes_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 119
+ERROR - 2018-05-29 22:59:09 --> Severity: Notice --> Undefined variable: state_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 118
+ERROR - 2018-05-29 22:59:09 --> Severity: Notice --> Undefined variable: likes_tmp /Applications/MAMP/htdocs/App/application/controllers/Users.php 119
+ERROR - 2018-05-29 23:05:24 --> Severity: Notice --> Undefined offset: 0 /Applications/MAMP/htdocs/App/application/views/users/profile.php 100
+ERROR - 2018-05-29 23:05:24 --> Severity: Notice --> Undefined offset: 1 /Applications/MAMP/htdocs/App/application/views/users/profile.php 100
+ERROR - 2018-05-29 23:05:24 --> Severity: Notice --> Undefined offset: 2 /Applications/MAMP/htdocs/App/application/views/users/profile.php 100
+ERROR - 2018-05-29 23:05:32 --> Severity: Notice --> Undefined offset: 0 /Applications/MAMP/htdocs/App/application/views/users/profile.php 100
+ERROR - 2018-05-29 23:05:32 --> Severity: Notice --> Undefined offset: 1 /Applications/MAMP/htdocs/App/application/views/users/profile.php 100
+ERROR - 2018-05-29 23:05:32 --> Severity: Notice --> Undefined offset: 2 /Applications/MAMP/htdocs/App/application/views/users/profile.php 100
+ERROR - 2018-05-29 23:19:41 --> Severity: Notice --> Undefined variable: cpt /Applications/MAMP/htdocs/App/application/views/users/following.php 16
