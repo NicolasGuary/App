@@ -95,32 +95,32 @@
                 <hr>
                 <p class="bg-light mt-2 text-center"><?php echo $post['contenu'];?></p>
                 <div class="row">
-                <!-- Like/Unlike button according to the state in database for current post -->
-                <?php if (!isset($stateLike[$iterate]['state'])) : ;?>
-                    <?php echo form_open('posts/like/'.$post['id']);?>
-                    <div class="col-lg-2 col-sm-4">
-                        <button type="submit" class="btn btn-primary mt-1 mb-2"> Like <span class="ml-1 badge badge-light"><?php echo $likes[$iterate]['likes'];?></span></button>
-                    </div>
-                    <?php echo form_close();?>
-                <?php elseif (intval($stateLike[$iterate]['state']) == 0) :;?>
-                    <?php echo form_open('posts/like/'.$post['id']);?>
-                    <div class="col-lg-2 col-sm-4">
-                        <button type="submit" class="btn btn-primary mt-1 mb-2"> Like <span class="ml-1 badge badge-light"><?php echo $likes[$iterate]['likes'];?></span></button>
-                    </div>
-                    <?php echo form_close();?>
-                <?php else : ;?>
-                    <?php echo form_open('posts/unlike/'.$post['id']);?>
-                    <div class="col-lg-2 col-sm-4">
-                        <button type="submit" class="btn btn-outline-primary mt-1 mb-2"> Liked <span class="ml-1 badge badge-light"><?php echo $likes[$iterate]['likes'];?></span></button>
-                    </div>
-                    <?php echo form_close();?>
-                <?php endif;?>
-                <!--END LIKE-->
+                    <!-- Like/Unlike button according to the state in database for current post -->
+                    <?php if (!isset($stateLike[$iterate]['state'])) : ;?>
+                        <?php echo form_open('posts/like/'.$post['id']);?>
+                        <div class="col-lg-2 col-sm-4">
+                            <button type="submit" class="btn btn-primary mt-1 mb-2"> Like <span class="ml-1 badge badge-light"><?php echo $likes[$iterate]['likes'];?></span></button>
+                        </div>
+                        <?php echo form_close();?>
+                    <?php elseif (intval($stateLike[$iterate]['state']) == 0) :;?>
+                        <?php echo form_open('posts/like/'.$post['id']);?>
+                        <div class="col-lg-2 col-sm-4">
+                            <button type="submit" class="btn btn-primary mt-1 mb-2"> Like <span class="ml-1 badge badge-light"><?php echo $likes[$iterate]['likes'];?></span></button>
+                        </div>
+                        <?php echo form_close();?>
+                    <?php else : ;?>
+                        <?php echo form_open('posts/unlike/'.$post['id']);?>
+                        <div class="col-lg-2 col-sm-4">
+                            <button type="submit" class="btn btn-outline-primary mt-1 mb-2"> Liked <span class="ml-1 badge badge-light"><?php echo $likes[$iterate]['likes'];?></span></button>
+                        </div>
+                        <?php echo form_close();?>
+                    <?php endif;?>
+                    <!--END LIKE-->
                     <!--Edit button-->
                     <?php if ($post['idUser'] == $loggedUser[0]['id']) :?>
-                    <button type="button" class="btn btn-secondary mt-1 mb-2 mr-3" data-toggle="modal" data-target="#editTrack">
-                        Edit
-                    </button>
+                        <button type="button" class="btn btn-secondary mt-1 mb-2 mr-3" data-toggle="modal" data-target="#editTrack">
+                            Edit
+                        </button>
                         <div class="modal fade" id="editTrack" tabindex="-1" role="dialog" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
@@ -153,14 +153,34 @@
                         </div>
                     <?php endif;?>
                     <!--End of edit post-->
-                <!--Delete post button-->
-                <?php if ($post['idUser'] == $loggedUser[0]['id']) :?>
-                    <?php echo form_open('posts/delete/'.$post['id']);?>
-                    <button type="submit" name="delete" value="delete"  class="btn btn-danger  mt-1 mb-2">Delete</button>
-                    <?php echo form_close();?>
-                <?php endif;?>
-                <!--End of delete post-->
-            </div>
+                    <!--Delete post button-->
+                    <?php if ($post['idUser'] == $loggedUser[0]['id']) :?>
+                        <button name="delete" value="delete" data-toggle="modal" data-target="#deletePost" class="btn btn-danger mt-1 mb-2">Delete</button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="deletePost" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="logout-warning">Warning</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure you want to delete this post?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <?php echo form_open('posts/delete/'.$post['id']);?>
+                                        <button type="submit" name="delete" value="delete" class="btn btn-danger">Delete</button>
+                                        <?php echo form_close();?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif;?>
+                    <!--End of delete post-->
+                </div>
             </div>
         </div>
     </div>

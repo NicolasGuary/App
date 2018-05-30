@@ -14,12 +14,12 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <?php if($this->CookieModel->isLoggedIn()) : ;?>
-    <div class="collapse navbar-collapse" id="navbarMenu">
+        <div class="collapse navbar-collapse" id="navbarMenu">
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="<?php echo base_url();?>posts">Hear the world</a>
             <a class="nav-item nav-link active" href="<?php echo base_url();?>posts/timeline">Timeline</a>
             <?php if(isset($loggedUser)) : ;?>
-            <a class="nav-item nav-link active" href=<?php echo base_url();?>users/<?php echo $loggedUser[0]['id'];?>>Profile</a>
+                <a class="nav-item nav-link active" href=<?php echo base_url();?>users/<?php echo $loggedUser[0]['id'];?>>Profile</a>
             <?php endif;?>
             <a class="nav-item nav-link active" href="<?php echo base_url();?>posts/create">Post</a>
             <a class="nav-item nav-link active" href="<?php echo base_url();?>users/following/<?php echo $loggedUser[0]['id'];?>">Following</a>
@@ -27,18 +27,18 @@
         </div>
 
         <?php if(isset($loggedUser)) : ;?>
-        <div class="navbar-nav ml-auto mr-3">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
-                    <?php echo $loggedUser[0]['prenom']." ".$loggedUser[0]['nom'];?>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href=<?php echo base_url();?>users/<?php echo $loggedUser[0]['id'];?>>View Profile</a>
-                    <a class="dropdown-item" href="#">Edit Profile</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="<?php echo base_url();?>users/logout" data-toggle="modal" data-target="#logout">Log out</a>
-                </div>
-        </div>
+            <div class="navbar-nav ml-auto mr-3">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">
+                        <?php echo $loggedUser[0]['prenom']." ".$loggedUser[0]['nom'];?>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href=<?php echo base_url();?>users/<?php echo $loggedUser[0]['id'];?>>View Profile</a>
+                        <a class="dropdown-item" href="#">Edit Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="<?php echo base_url();?>users/logout" data-toggle="modal" data-target="#logout">Log out</a>
+                    </div>
+            </div>
             <!-- Modal -->
             <div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -59,8 +59,8 @@
                     </div>
                 </div>
             </div>
-    </div>
-    <?php endif ;?>
+            </div>
+        <?php endif ;?>
     <?php else : ;?>
         <div class="collapse navbar-collapse" id="navbarMenu">
             <div class="navbar-nav ml-auto mr-3">
@@ -70,3 +70,6 @@
         </div>
     <?php endif;?>
 </nav>
+
+
+

@@ -4,7 +4,6 @@
         Create a new post !
     </button>
 </div>
-
 <div class="modal fade" id="postTrack" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -82,9 +81,29 @@
                         <!--End of edit post-->
                         <!--Delete post button-->
                         <?php if ($post['idUser'] == $loggedUser[0]['id']) :?>
-                            <?php echo form_open('posts/delete/'.$post['id']);?>
-                            <button type="submit" name="delete" value="delete"  class="btn btn-danger btn-sm float-right">Delete</button>
-                            <?php echo form_close();?>
+                            <button data-toggle="modal" data-target="#deletePost" type="submit" name="delete" value="delete"  class="btn btn-danger btn-sm float-right">Delete</button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="deletePost" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="logout-warning">Warning</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete this post?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                            <?php echo form_open('posts/delete/'.$post['id']);?>
+                                            <button type="submit" name="delete" value="delete" class="btn btn-danger">Delete</button>
+                                            <?php echo form_close();?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         <?php endif;?>
                         <!--End of delete post-->
                         <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $post['photo'];?>" id="profile-image1" class="ml-auto mr-4 d-block img-thumbnail img-responsive float-left" height="70" width="70">
@@ -199,13 +218,33 @@
                         <!--End Modal-->
                     <?php endif;?>
                     <!--End of edit comment-->
-                    <!--Delete comment button-->
-                    <?php if ($comment['idUser'] == $loggedUser[0]['id']) :?>
-                        <?php echo form_open('comments/delete/'.$comment['idComment']);?>
-                        <button type="submit" name="delete" value="delete" class="float-right mb-1 mr-1 btn btn-outline-danger">Delete</button>
-                        <?php echo form_close();?>
-                    <?php endif;?>
-                    <!--End of delete comment-->
+                        <!--Delete comment button-->
+                        <?php if ($comment['idUser'] == $loggedUser[0]['id']) :?>
+                            <button type="submit" name="delete" value="delete" data-toggle="modal" data-target="#deleteComment" class="float-right mb-1 mr-1 btn btn-outline-danger">Delete</button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="deleteComment" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="logout-warning">Warning</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to delete this comment?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                            <?php echo form_open('comments/delete/'.$comment['idComment']);?>
+                                            <button type="submit" name="delete" value="delete" class="btn btn-danger">Delete</button>
+                                            <?php echo form_close();?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif;?>
+                        <!--End of delete comment-->
                     </div>
                 </div>
             <?php endif;?>

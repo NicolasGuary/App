@@ -157,9 +157,29 @@
                             <!--End of edit comment-->
                             <!--Delete comment button-->
                             <?php if ($comment['idUser'] == $loggedUser[0]['id']) :?>
-                                <?php echo form_open('comments/delete/'.$comment['idComment']);?>
-                                <button type="submit" name="delete" value="delete" class="float-right mb-1 mr-1 btn btn-outline-danger">Delete</button>
-                                <?php echo form_close();?>
+                                <button type="submit" name="delete" value="delete" data-toggle="modal" data-target="#deleteComment" class="float-right mb-1 mr-1 btn btn-outline-danger">Delete</button>
+                                <!-- Modal -->
+                                <div class="modal fade" id="deleteComment" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="logout-warning">Warning</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Are you sure you want to delete this comment?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                <?php echo form_open('comments/delete/'.$comment['idComment']);?>
+                                                <button type="submit" name="delete" value="delete" class="btn btn-danger">Delete</button>
+                                                <?php echo form_close();?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             <?php endif;?>
                             <!--End of delete comment-->
                         </div>
