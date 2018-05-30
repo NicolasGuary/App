@@ -15,21 +15,42 @@
             return $this->db->insert('comment',$data);
         }
 
+        public function deleteComment($idComment){
+            $this->db->query('DELETE FROM comment WHERE id = ?',$idComment);
+        }
+
         public function getComments($idPost){
             $query = $this->db->query(
-                'SELECT comment.id, comment.body, comment.idPost, comment.idUser, comment.commented_at, user.id, user.nom, user.prenom, user.photo, post.id 
+                'SELECT comment.id as idComment, comment.body, comment.idPost, comment.idUser, comment.commented_at, user.id, user.nom, user.prenom, user.photo, post.id 
                  FROM comment, user, post 
                  WHERE comment.idPost = post.id and post.id = ? and comment.idUser = user.id 
                  ORDER BY comment.id DESC',array($idPost));
             return $query->result_array();
         }
 
+        public function getAuthor($idComment){
+            $query = $this->db->query(
+                'SELECT comment.idUser
+                 FROM comment, user
+                 WHERE comment.id = ? and comment.idUser = user.id',array($idComment));
+            return $query->result_array();
+        }
+
         public function getAllComments(){
             $query = $this->db->query(
-            'SELECT comment.id, comment.body, comment.idPost, comment.idUser, comment.commented_at, user.id, user.nom, user.prenom, user.photo, post.id 
+            'SELECT comment.id as idComment, comment.body, comment.idPost, comment.idUser, comment.commented_at, user.id, user.nom, user.prenom, user.photo, post.id 
              FROM comment, user, post 
              WHERE comment.idPost = post.id and comment.idUser = user.id 
              ORDER BY comment.id DESC');
+            return $query->result_array();
+        }
+        public function getAllCommentsFollowing($idUser){
+            $query = $this->db->query(
+                'SELECT comment.id as idComment, comment.body, comment.idPost, comment.idUser, comment.commented_at, user.id, user.nom, user.prenom, user.photo, post.id 
+                FROM comment, user, post
+                WHERE comment.idPost = post.id and comment.idUser = user.id
+            AND comment.idUser IN (SELECT follow.idUser FROM follow WHERE idFollower= ? AND state=1)
+             ORDER BY comment.id DESC', $idUser);
             return $query->result_array();
         }
     }

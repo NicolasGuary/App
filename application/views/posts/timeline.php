@@ -1,4 +1,4 @@
-<div class="text-center"> <small class="text-muted">"Hear The World" features all the posts from the users on MANT, even if you don't follow them. It's time to discover new music ! </small> </div>
+<div class="text-center"> <small class="text-muted">The timeline will only display posts from users you are following. </small> </div>
 <div class="text-center mt-3 mb-3">
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#postTrack">
         Create a new post !
@@ -43,13 +43,6 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-12">
-                    <!--Delete post button-->
-                    <?php if ($post['idUser'] == $loggedUser[0]['id']) :?>
-                        <?php echo form_open('posts/delete/'.$post['id']);?>
-                        <button type="submit" name="delete" value="delete"  class="btn btn-danger btn-sm float-right">Delete</button>
-                        <?php echo form_close();?>
-                    <?php endif;?>
-                    <!--End of delete post-->
                     <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $post['photo'];?>" id="profile-image1" class="ml-auto mr-4 d-block img-thumbnail img-responsive float-left" height="70" width="70">
                     <h2><span class="text-uppercase font-weight-bold"><a class="text-dark bio" href="<?php echo site_url('/users/'.$post['idUser']);?>"><?php echo $post['prenom']." ".$post['nom'];?></span></h2></a>
                     <!-- Follow/Unfollow button according to the state in database for current user -->
@@ -144,6 +137,7 @@
                             <?php echo form_close();?>
                         <?php endif;?>
                         <!--End of delete comment-->
+                       <!-- CHECK TIMELINE COMMENTS -->
                     </div>
                     <?php endif;?>
                 <?php endforeach;?>

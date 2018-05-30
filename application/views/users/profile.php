@@ -94,6 +94,7 @@
                 <div class="mb-3 text-center embed-responsive embed-responsive-16by9 col-8 mx-auto"> <iframe class="embed-responsive-item" width="600" height="330" src="<?php echo "https://www.youtube.com/embed/".$post['link'];?>" frameborder="0" allow="autoplay;" allowfullscreen></iframe></div>
                 <hr>
                 <p class="bg-light mt-2 text-center"><?php echo $post['contenu'];?></p>
+                <div class="row">
                 <!-- Like/Unlike button according to the state in database for current post -->
                 <?php if (!isset($stateLike[$iterate]['state'])) : ;?>
                     <?php echo form_open('posts/like/'.$post['id']);?>
@@ -115,11 +116,19 @@
                     <?php echo form_close();?>
                 <?php endif;?>
                 <!--END LIKE-->
+                <!--Delete post button-->
+                <?php if ($post['idUser'] == $loggedUser[0]['id']) :?>
+                    <?php echo form_open('posts/delete/'.$post['id']);?>
+                    <button type="submit" name="delete" value="delete"  class="btn btn-danger  mt-1 mb-2">Delete</button>
+                    <?php echo form_close();?>
+                <?php endif;?>
+                <!--End of delete post-->
+            </div>
             </div>
         </div>
     </div>
     <?php $iterate ++;?>
 <?php endforeach;?>
 <?php if(empty($posts)) : ?>
-    <p class="mt-5 text-center">No recent post to show.</p>
+    <p class="text-center">No recent post to show.</p>
 <?php endif;?>

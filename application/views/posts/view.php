@@ -4,6 +4,13 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-12">
+                    <!--Delete post button-->
+                    <?php if ($post['idUser'] == $loggedUser[0]['id']) :?>
+                        <?php echo form_open('posts/delete/'.$post['id']);?>
+                        <button type="submit" name="delete" value="delete"  class="btn btn-danger btn-sm float-right">Delete</button>
+                        <?php echo form_close();?>
+                    <?php endif;?>
+                    <!--End of delete post-->
                     <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $post['photo'];?>" id="profile-image1" class="ml-auto mr-4 d-block img-thumbnail img-responsive float-left" height="70" width="70">
                     <h1><span class="text-uppercase font-weight-bold"><a class="text-dark bio" href="<?php echo site_url('/users/'.$post['idUser']);?>"><?php echo $post['prenom']." ".$post['nom'];?></span></h1></a>
                     <!-- Follow/Unfollow button according to the state in database for current user -->
@@ -88,6 +95,13 @@
                                 <p class="ml-3"><?php echo $comment['body'];?></p>
                             </div>
                         </div>
+                        <!--Delete comment button-->
+                        <?php if ($comment['idUser'] == $loggedUser[0]['id']) :?>
+                            <?php echo form_open('comments/delete/'.$comment['idComment']);?>
+                            <button type="submit" name="delete" value="delete"  class="float-right mb-1 mr-1 badge badge-light text-danger">Delete</button>
+                            <?php echo form_close();?>
+                        <?php endif;?>
+                        <!--End of delete comment-->
                     </div>
                 <?php endforeach;?>
             <?php else : ?>

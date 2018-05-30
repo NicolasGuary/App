@@ -17,13 +17,13 @@
     <div class="collapse navbar-collapse" id="navbarMenu">
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="<?php echo base_url();?>posts">Hear the world</a>
-            <a class="nav-item nav-link active" href="<?php echo base_url();?>posts">Timeline</a>
+            <a class="nav-item nav-link active" href="<?php echo base_url();?>posts/timeline">Timeline</a>
             <?php if(isset($loggedUser)) : ;?>
             <a class="nav-item nav-link active" href=<?php echo base_url();?>users/<?php echo $loggedUser[0]['id'];?>>Profile</a>
             <?php endif;?>
             <a class="nav-item nav-link active" href="<?php echo base_url();?>posts/create">Post</a>
-            <a class="nav-item nav-link active" href="<?php echo base_url();?>">Following</a>
-            <a class="nav-item nav-link active" href="<?php echo base_url();?>">Followers</a>
+            <a class="nav-item nav-link active" href="<?php echo base_url();?>users/following/<?php echo $loggedUser[0]['id'];?>">Following</a>
+            <a class="nav-item nav-link active" href="<?php echo base_url();?>users/followers/<?php echo $loggedUser[0]['id'];?>">Followers</a>
         </div>
 
         <?php if(isset($loggedUser)) : ;?>

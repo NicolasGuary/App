@@ -15,6 +15,29 @@
             return $query->result_array();
         }
 
+        public function getPostsFollowing($limit=FALSE, $offset=FALSE,$idUser){
+            $offset = intval($offset);
+            $query = $this->db->query(
+                'SELECT post.id, post.contenu, post.link,post.idUser,post.date,post.titre, post.idUser, user.prenom,user.nom, user.photo
+                FROM post,user
+                WHERE post.idUser = user.id
+                AND post.idUser IN (SELECT follow.idUser FROM follow WHERE idFollower= ? AND state=1)
+                ORDER BY post.id DESC
+             LIMIT ? OFFSET ?;',array($idUser,$limit,$offset));
+            return $query->result_array();
+        }
+
+        public function countAllTimeline($idUser){
+            $query = $this->db->query(
+                'SELECT count(*) as rows
+             FROM post,user, follow 
+             WHERE post.idUser = user.id
+             AND user.id = follow.idFollower
+             AND state=1
+             AND idFollower = ?',$idUser);
+            return $query->row_array();
+        }
+
         public function getPost($id){
             $query = $this->db->query('SELECT post.id, post.contenu, post.link,post.idUser,post.date,post.titre, post.idUser, user.prenom,user.nom, user.photo FROM post,user WHERE post.idUser = user.id and '.$id.'=post.id');
             return $query->result_array();
@@ -76,6 +99,13 @@
         $data = $this->security->xss_clean($data);
         $data = html_escape($data);
         return $this->db->insert('post',$data);
+        }
+
+        public function deletePost($idPost){
+            $this->db->query('DELETE FROM likers WHERE idPost = ?',$idPost);
+            $this->db->query('DELETE FROM comment WHERE idPost = ?',$idPost);
+            $this->db->query('DELETE FROM post WHERE id = ?',$idPost);
+            return true;
         }
 
         /* STATE 1 = LIKED STATE 0 = UNLIKED */
