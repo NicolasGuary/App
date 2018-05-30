@@ -76,7 +76,7 @@
             if(isset($match[1])){
                 return $id = $match[1];
             }
-            return false;
+            return $url;
         }
 
         private function getVideoTitle($id){
@@ -106,6 +106,23 @@
             $this->db->query('DELETE FROM comment WHERE idPost = ?',$idPost);
             $this->db->query('DELETE FROM post WHERE id = ?',$idPost);
             return true;
+        }
+
+        public function updatePost($idPost){
+            $vid = $this->input->post('link');
+            $id = $this->getVideoID($vid);
+
+            if($id === 0){
+            }
+            $data = array(
+                'link' =>$id,
+                'contenu' =>$this->input->post('contenu'),
+                'titre' =>$this->getVideoTitle($id),
+            );
+            $data = $this->security->xss_clean($data);
+            $data = html_escape($data);
+            $this->db->where('id', $idPost);
+            return $this->db->update('post',$data);
         }
 
         /* STATE 1 = LIKED STATE 0 = UNLIKED */

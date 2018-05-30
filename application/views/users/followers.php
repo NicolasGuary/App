@@ -47,4 +47,7 @@
             </div>
         <?php endforeach;?>
     </div>
+    <?php if($amountFollowerAccounts[0]['amount'] ==0) : ?>
+        <p class="text-center">No followers yet.</p>
+    <?php endif;?>
 </div>

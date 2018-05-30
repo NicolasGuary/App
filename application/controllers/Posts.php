@@ -189,6 +189,19 @@ class Posts extends CI_Controller{
             redirect('users/login');
         }
     }
+
+    public function update($idPost){
+        $idLogged = $this->CookieModel->isLoggedIn();
+        $idAuthor = $this->PostModel->getAuthor($idPost);
+        $idAuthor = intval($idAuthor[0]['idUser']);
+        if (isset($idLogged) && $idLogged == $idAuthor) {
+            $this->PostModel->updatePost($idPost);
+            redirect('posts');
+        } else {
+            redirect('users/login');
+        }
+    }
+
     public function youtube_link($url){
         preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
         if(isset($match[1])){

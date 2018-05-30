@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$route['posts/update/(:any)'] = 'posts/update/$1';
+
 $route['users/logout'] = 'users/logout';
 $route['users/follow'] = 'users/follow';
 $route['users/following/(:any)'] = 'users/following/$1';
@@ -9,6 +11,7 @@ $route['users/register'] = 'users/register';
 $route['users/login'] = 'users/login';
 $route['users/(:any)'] = 'users/profile/$1';
 
+$route['posts/update/(:any)'] = 'posts/update/$1';
 $route['posts/timeline'] = 'posts/timeline';
 $route['posts/index'] = 'posts/index';
 $route['posts/create'] = 'posts/create';

@@ -4,6 +4,43 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-12">
+                    <?php if ($post['idUser'] == $loggedUser[0]['id']) :?>
+                        <!--Edit button-->
+                        <button type="button" class="btn btn-sm btn-secondary float-right ml-2" data-toggle="modal" data-target="#editTrack">
+                            Edit
+                        </button>
+                        <div class="modal fade" id="editTrack" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <?php echo form_open('posts/update/'.$post['id']);?>
+                                    <?php echo validation_errors('<div class="text-center mx-auto"><p class="badge badge-danger mt-2">','</p></div>');?>
+                                    <div class="card col-10 mx-auto mt-3 mb-5">
+                                        <div class="container mt-3 mb-5">
+                                            <div class="row justify-content-center">
+                                                <div class="col-10 text-center">
+                                                    <h1 class="text-uppercase">Update your post</h1>
+                                                </div>
+                                                <div class="col-10">
+                                                    <div class="form-group">
+                                                        <label>Your favorite track of the day</label>
+                                                        <input name="link" type="text" class="form-control" placeholder="YouTube URL" value="<?php echo $post['link'];?>">
+                                                        <small type="text" class="form-text text-muted">Video will be displayed on your post</small>
+                                                        <label class="mt-2">Say something nice about it</label>
+                                                        <textarea name="contenu" class="form-control" rows="3"><?php echo $post['contenu'];?></textarea>
+                                                    </div>
+                                                    <div class="mt-2 mb-5 text-center">
+                                                        <button type="submit" class="btn btn-outline-primary ">Update</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif;?>
+                    <!--End of edit post-->
                     <!--Delete post button-->
                     <?php if ($post['idUser'] == $loggedUser[0]['id']) :?>
                         <?php echo form_open('posts/delete/'.$post['id']);?>
@@ -95,13 +132,39 @@
                                 <p class="ml-3"><?php echo $comment['body'];?></p>
                             </div>
                         </div>
-                        <!--Delete comment button-->
-                        <?php if ($comment['idUser'] == $loggedUser[0]['id']) :?>
-                            <?php echo form_open('comments/delete/'.$comment['idComment']);?>
-                            <button type="submit" name="delete" value="delete"  class="float-right mb-1 mr-1 badge badge-light text-danger">Delete</button>
-                            <?php echo form_close();?>
-                        <?php endif;?>
-                        <!--End of delete comment-->
+                        <div class="container float-right">
+                            <!--Edit comment-->
+                            <?php if ($comment['idUser'] == $loggedUser[0]['id']) :?>
+                                <button type="submit" name="edit" value="edit" class="float-right mb-1 btn btn-outline-secondary" data-toggle="modal" data-target="#editComment">Edit</button>
+                                <!--Modal-->
+                                <div class="modal fade" id="editComment" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <?php echo form_open('comments/update/'.$comment['idComment']); ?>
+                                            <div class="row">
+                                                <h2 class="mx-auto text-center">Edit your comment</h2>
+                                                <textarea class="mb-5 ml-5 form-control mt-1 col-10" type="text" name="body" rows="3" placeholder="Comment..."><?php echo $comment['body'];?></textarea>
+                                                <input type="hidden" name="id" value="<?php echo $post['id'];?>">
+                                                <input type="hidden" name="idUser" value="<?php echo $post['idUser'];?>">
+                                                <button type="submit" class="btn col-1 mr-2">
+                                                    <img class="text-center img-responsive input-group-btn" src="<?php echo base_url();?>assets/img/send.svg" width="30" height="40">
+                                                </button>
+                                            </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--End Modal-->
+                            <?php endif;?>
+                            <!--End of edit comment-->
+                            <!--Delete comment button-->
+                            <?php if ($comment['idUser'] == $loggedUser[0]['id']) :?>
+                                <?php echo form_open('comments/delete/'.$comment['idComment']);?>
+                                <button type="submit" name="delete" value="delete" class="float-right mb-1 mr-1 btn btn-outline-danger">Delete</button>
+                                <?php echo form_close();?>
+                            <?php endif;?>
+                            <!--End of delete comment-->
+                        </div>
                     </div>
                 <?php endforeach;?>
             <?php else : ?>

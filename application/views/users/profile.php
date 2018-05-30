@@ -116,6 +116,43 @@
                     <?php echo form_close();?>
                 <?php endif;?>
                 <!--END LIKE-->
+                    <!--Edit button-->
+                    <?php if ($post['idUser'] == $loggedUser[0]['id']) :?>
+                    <button type="button" class="btn btn-secondary mt-1 mb-2 mr-3" data-toggle="modal" data-target="#editTrack">
+                        Edit
+                    </button>
+                        <div class="modal fade" id="editTrack" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <?php echo form_open('posts/update/'.$post['id']);?>
+                                    <?php echo validation_errors('<div class="text-center mx-auto"><p class="badge badge-danger mt-2">','</p></div>');?>
+                                    <div class="card col-10 mx-auto mt-3 mb-5">
+                                        <div class="container mt-3 mb-5">
+                                            <div class="row justify-content-center">
+                                                <div class="col-10 text-center">
+                                                    <h1 class="text-uppercase">Update your post</h1>
+                                                </div>
+                                                <div class="col-10">
+                                                    <div class="form-group">
+                                                        <label>Your favorite track of the day</label>
+                                                        <input name="link" type="text" class="form-control" placeholder="YouTube URL" value="<?php echo $post['link'];?>">
+                                                        <small type="text" class="form-text text-muted">Video will be displayed on your post</small>
+                                                        <label class="mt-2">Say something nice about it</label>
+                                                        <textarea name="contenu" class="form-control" rows="3"><?php echo $post['contenu'];?></textarea>
+                                                    </div>
+                                                    <div class="mt-2 mb-5 text-center">
+                                                        <button type="submit" class="btn btn-outline-primary ">Update</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif;?>
+                    <!--End of edit post-->
                 <!--Delete post button-->
                 <?php if ($post['idUser'] == $loggedUser[0]['id']) :?>
                     <?php echo form_open('posts/delete/'.$post['id']);?>

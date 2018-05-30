@@ -100,3 +100,12 @@ ERROR - 2018-05-30 12:10:00 --> Severity: Notice --> Undefined offset: 0 /Applic
 ERROR - 2018-05-30 12:13:18 --> Severity: Notice --> Undefined property: Comments::$Comment /Applications/MAMP/htdocs/App/application/controllers/Comments.php 45
 ERROR - 2018-05-30 12:13:18 --> Severity: error --> Exception: Call to a member function deleteComment() on null /Applications/MAMP/htdocs/App/application/controllers/Comments.php 45
 ERROR - 2018-05-30 12:16:09 --> Severity: Notice --> Undefined index: idComment /Applications/MAMP/htdocs/App/application/views/posts/index.php 142
+ERROR - 2018-05-30 14:36:56 --> Severity: Notice --> Undefined variable: followers /Applications/MAMP/htdocs/App/application/views/posts/view.php 20
+ERROR - 2018-05-30 14:36:56 --> Severity: Notice --> Undefined variable: likes /Applications/MAMP/htdocs/App/application/views/posts/view.php 49
+ERROR - 2018-05-30 14:37:40 --> Severity: Notice --> Undefined variable: followers /Applications/MAMP/htdocs/App/application/views/posts/view.php 20
+ERROR - 2018-05-30 14:37:40 --> Severity: Notice --> Undefined variable: likes /Applications/MAMP/htdocs/App/application/views/posts/view.php 49
+ERROR - 2018-05-30 14:38:27 --> Severity: Notice --> Undefined index: body /Applications/MAMP/htdocs/App/application/views/posts/edit.php 16
+ERROR - 2018-05-30 14:40:58 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'update=post.id' at line 1 - Invalid query: SELECT post.id, post.contenu, post.link,post.idUser,post.date,post.titre, post.idUser, user.prenom,user.nom, user.photo FROM post,user WHERE post.idUser = user.id and update=post.id
+ERROR - 2018-05-30 14:50:34 --> Query error: Unknown column 'update20' in 'where clause' - Invalid query: SELECT post.id, post.contenu, post.link,post.idUser,post.date,post.titre, post.idUser, user.prenom,user.nom, user.photo FROM post,user WHERE post.idUser = user.id and update20=post.id
+ERROR - 2018-05-30 14:58:23 --> Severity: Notice --> Undefined index: title /Applications/MAMP/htdocs/App/application/models/PostModel.php 85
+ERROR - 2018-05-30 16:24:09 --> Severity: Notice --> Undefined offset: 0 /Applications/MAMP/htdocs/App/application/controllers/Comments.php 56

@@ -48,4 +48,17 @@
                 redirect('users/login');
             }
         }
+
+        public function update($idComment)
+        {
+            $idLogged = $this->CookieModel->isLoggedIn();
+            $idAuthor = $this->CommentModel->getAuthor($idComment);
+            $idAuthor = intval($idAuthor[0]['idUser']);
+            if (isset($idLogged) && $idLogged == $idAuthor) {
+                $this->CommentModel->updateComment($idComment);
+                redirect('posts');
+            } else {
+                redirect('users/login');
+            }
+        }
     }

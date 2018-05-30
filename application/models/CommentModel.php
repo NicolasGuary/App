@@ -19,6 +19,16 @@
             $this->db->query('DELETE FROM comment WHERE id = ?',$idComment);
         }
 
+        public function updateComment($idComment){
+            $data= array(
+                'body'=> $this->input->post('body')
+            );
+            $data = $this->security->xss_clean($data);
+            $data = html_escape($data);
+            $this->db->where('id', $idComment);
+            return $this->db->update('comment',$data);
+        }
+
         public function getComments($idPost){
             $query = $this->db->query(
                 'SELECT comment.id as idComment, comment.body, comment.idPost, comment.idUser, comment.commented_at, user.id, user.nom, user.prenom, user.photo, post.id 
