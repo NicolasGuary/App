@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9b84de5-abce-459f-ab19-3cfc366a3300" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/application/views/posts/timeline.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Comments.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Comments.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Posts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/CommentModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/CommentModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/PostModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/PostModel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/posts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/posts/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/posts/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/posts/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/templates/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/users/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/users/profile.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,11 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommentModel.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CommentModel.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/models/CommentModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
+            <state relative-caret-position="656">
+              <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -47,7 +37,7 @@
       <file leaf-file-name="Comments.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Comments.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="533">
+            <state relative-caret-position="660">
               <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
             </state>
           </provider>
@@ -56,7 +46,7 @@
       <file leaf-file-name="Posts.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Posts.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1718">
+            <state relative-caret-position="-554">
               <caret line="131" column="58" lean-forward="true" selection-start-line="131" selection-start-column="58" selection-end-line="131" selection-end-column="58" />
             </state>
           </provider>
@@ -65,7 +55,7 @@
       <file leaf-file-name="PostModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/PostModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
+            <state relative-caret-position="1575">
               <caret line="105" selection-start-line="105" selection-end-line="105" selection-end-column="77" />
             </state>
           </provider>
@@ -92,13 +82,13 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/posts/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
+            <state relative-caret-position="506">
               <caret line="139" selection-start-line="139" selection-end-line="145" selection-end-column="52" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="timeline.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="timeline.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/posts/timeline.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="534">
@@ -168,8 +158,8 @@
         <option value="$PROJECT_DIR$/application/controllers/Comments.php" />
         <option value="$PROJECT_DIR$/application/views/posts/view.php" />
         <option value="$PROJECT_DIR$/application/views/posts/index.php" />
-        <option value="$PROJECT_DIR$/application/models/CommentModel.php" />
         <option value="$PROJECT_DIR$/application/views/posts/timeline.php" />
+        <option value="$PROJECT_DIR$/application/models/CommentModel.php" />
       </list>
     </option>
   </component>
@@ -183,11 +173,11 @@
     <packageJsonPaths />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.1" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1280" />
     <option name="y" value="22" />
     <option name="width" value="1280" />
-    <option name="height" value="1009" />
+    <option name="height" value="1016" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -352,15 +342,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1526492028998</updated>
-      <workItem from="1526492030273" duration="163619000" />
+      <workItem from="1526492030273" duration="165676000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163619000" />
+    <option name="totallyTimeSpent" value="165676000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="834" extended-state="6" />
+    <frame x="1280" y="22" width="1280" height="1016" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -370,7 +360,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17291667" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19453125" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="right" id="Database" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -646,13 +636,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/PostModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="105" selection-start-line="105" selection-end-line="105" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/UserModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1120">
@@ -667,45 +650,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/posts/timeline.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="139" column="55" selection-start-line="139" selection-start-column="55" selection-end-line="139" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
+        <state relative-caret-position="161">
           <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Posts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1718">
-          <caret line="131" column="58" lean-forward="true" selection-start-line="131" selection-start-column="58" selection-end-line="131" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Comments.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/CommentModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/posts/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
+        <state relative-caret-position="506">
           <caret line="139" selection-start-line="139" selection-end-line="145" selection-end-column="52" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/posts/timeline.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/Comments.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="139" column="55" selection-start-line="139" selection-start-column="55" selection-end-line="139" selection-end-column="55" />
+        <state relative-caret-position="660">
+          <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Posts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-554">
+          <caret line="131" column="58" lean-forward="true" selection-start-line="131" selection-start-column="58" selection-end-line="131" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/PostModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1575">
+          <caret line="105" selection-start-line="105" selection-end-line="105" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/CommentModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
         </state>
       </provider>
     </entry>

@@ -46,10 +46,12 @@
         }
         public function getAllCommentsFollowing($idUser){
             $query = $this->db->query(
-                'SELECT comment.id as idComment, comment.body, comment.idPost, comment.idUser, comment.commented_at, user.id, user.nom, user.prenom, user.photo, post.id 
-                FROM comment, user, post
-                WHERE comment.idPost = post.id and comment.idUser = user.id
-            AND comment.idUser IN (SELECT follow.idUser FROM follow WHERE idFollower= ? AND state=1)
+                'SELECT comment.id as idComment, comment.body, comment.idPost, comment.idUser, comment.commented_at,post.id, user.id, user.nom, user.prenom, user.photo
+                FROM post, comment, user
+            	WHERE post.id = comment.idPost
+            	AND comment.idUser = user.id
+            	AND post.idUser 
+            	IN (SELECT follow.idUser FROM follow WHERE idFollower = ? AND state =1)
              ORDER BY comment.id DESC', $idUser);
             return $query->result_array();
         }
