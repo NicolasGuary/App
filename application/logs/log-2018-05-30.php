@@ -111,3 +111,41 @@ ERROR - 2018-05-30 14:58:23 --> Severity: Notice --> Undefined index: title /App
 ERROR - 2018-05-30 16:24:09 --> Severity: Notice --> Undefined offset: 0 /Applications/MAMP/htdocs/App/application/controllers/Comments.php 56
 ERROR - 2018-05-30 17:12:28 --> Severity: Notice --> Undefined variable: post /Applications/MAMP/htdocs/App/application/views/templates/header.php 77
 ERROR - 2018-05-30 17:12:28 --> Severity: Notice --> Undefined variable: post /Applications/MAMP/htdocs/App/application/views/templates/header.php 105
+ERROR - 2018-05-30 21:59:23 --> Severity: error --> Exception: syntax error, unexpected ';', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' /Applications/MAMP/htdocs/App/application/controllers/Users.php 129
+ERROR - 2018-05-30 22:01:55 --> Severity: Notice --> Undefined variable: loggedUser /Applications/MAMP/htdocs/App/application/views/templates/header.php 25
+ERROR - 2018-05-30 22:01:55 --> Severity: Notice --> Undefined variable: loggedUser /Applications/MAMP/htdocs/App/application/views/templates/header.php 26
+ERROR - 2018-05-30 22:02:51 --> Severity: Notice --> Undefined variable: loggedUser /Applications/MAMP/htdocs/App/application/views/templates/header.php 25
+ERROR - 2018-05-30 22:02:51 --> Severity: Notice --> Undefined variable: loggedUser /Applications/MAMP/htdocs/App/application/views/templates/header.php 26
+ERROR - 2018-05-30 22:02:57 --> Severity: Notice --> Undefined variable: loggedUser /Applications/MAMP/htdocs/App/application/views/templates/header.php 25
+ERROR - 2018-05-30 22:02:57 --> Severity: Notice --> Undefined variable: loggedUser /Applications/MAMP/htdocs/App/application/views/templates/header.php 26
+ERROR - 2018-05-30 22:04:05 --> Severity: Notice --> Undefined index: photo /Applications/MAMP/htdocs/App/application/controllers/Users.php 119
+ERROR - 2018-05-30 22:04:05 --> Severity: error --> Exception: Call to undefined method UserModel::updateUser() /Applications/MAMP/htdocs/App/application/controllers/Users.php 126
+ERROR - 2018-05-30 22:05:57 --> Severity: Notice --> Undefined offset: 0 /Applications/MAMP/htdocs/App/application/controllers/Users.php 145
+ERROR - 2018-05-30 22:11:10 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 3 - Invalid query: 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription 
+        from user 
+        where user.id = ?
+ERROR - 2018-05-30 22:11:18 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 3 - Invalid query: 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription 
+        from user 
+        where user.id = ?
+ERROR - 2018-05-30 22:11:20 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 3 - Invalid query: 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription 
+        from user 
+        where user.id = ?
+ERROR - 2018-05-30 22:11:21 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 3 - Invalid query: 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription 
+        from user 
+        where user.id = ?
+ERROR - 2018-05-30 22:11:22 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 3 - Invalid query: 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription 
+        from user 
+        where user.id = ?
+ERROR - 2018-05-30 22:11:23 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 3 - Invalid query: 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription 
+        from user 
+        where user.id = ?
+ERROR - 2018-05-30 22:11:24 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 3 - Invalid query: 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription 
+        from user 
+        where user.id = ?

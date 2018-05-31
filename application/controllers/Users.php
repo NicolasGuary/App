@@ -85,6 +85,25 @@ class Users extends CI_Controller
         }
     }
 
+    public function delete($idUser)
+    {
+        $idLogged = $this->CookieModel->isLoggedIn();
+        $isAdmin = $this->UserModel->isAdmin($idLogged);
+        if ((isset($idLogged))) {
+            if($idLogged == $idUser || $isAdmin){
+                if($idLogged == $idUser){
+                    $this->CookieModel->deleteCookie();
+                }
+                $this->UserModel->delete($idUser);
+                redirect('posts');
+            } else {
+                redirect('posts');
+            }
+        } else {
+            redirect('users/login');
+        }
+    }
+
     public function logout()
     {
         $this->CookieModel->deleteCookie();
@@ -94,7 +113,8 @@ class Users extends CI_Controller
     public function profile($idUser)
     {
         $idLogged = $this->CookieModel->isLoggedIn();
-        if ((isset($idLogged))) {
+        $user = $this->UserModel->exists($idUser);
+        if ((isset($idLogged)) && $user) {
             $data['user'] = $this->UserModel->getUser($idUser);
             $data['user'] = $data['user'][0];
             $data['posts'] = $this->PostModel->getUsersPosts($idUser);
@@ -128,9 +148,9 @@ class Users extends CI_Controller
     }
 
     public function follow($idUser = false)
-    {
+    {   $user = $this->UserModel->exists($idUser);
         $idLogged = $this->CookieModel->isLoggedIn();
-        if ((isset($idLogged))) {
+        if ((isset($idLogged)) && $user) {
             $this->UserModel->follow($idUser, $idLogged);
             $link = base_url().'users/'.$idUser;
             redirect($link);
@@ -138,9 +158,9 @@ class Users extends CI_Controller
     }
 
     public function unfollow($idUser = false)
-    {
+    {   $user = $this->UserModel->exists($idUser);
         $idLogged = $this->CookieModel->isLoggedIn();
-        if ((isset($idLogged))) {
+        if ((isset($idLogged)) && $user) {
             $this->UserModel->unfollow($idUser, $idLogged);
             $link = base_url().'users/'.$idUser;
             redirect($link);
@@ -148,9 +168,9 @@ class Users extends CI_Controller
     }
 
     public function following($idUser= false){
-        {
+        {   $user = $this->UserModel->exists($idUser);
             $idLogged = $this->CookieModel->isLoggedIn();
-            if ((isset($idLogged))) {
+            if ((isset($idLogged)) && $user) {
                 $data['user'] = $this->UserModel->getUser($idUser);
                 $data['user'] = $data['user'][0];
                 $data['followers'] = $this->UserModel->followers($idUser);
@@ -172,9 +192,9 @@ class Users extends CI_Controller
     }
 
     public function followers($idUser= false){
-        {
+        {   $user = $this->UserModel->exists($idUser);
             $idLogged = $this->CookieModel->isLoggedIn();
-            if ((isset($idLogged))) {
+            if ((isset($idLogged)) && $user) {
                 $data['user'] = $this->UserModel->getUser($idUser);
                 $data['user'] = $data['user'][0];
                 $data['followers'] = $this->UserModel->followers($idUser);

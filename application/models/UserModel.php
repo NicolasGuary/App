@@ -15,10 +15,22 @@ class UserModel extends CI_Model{
 
     public function getUser($idUser){
         $query = $this->db->query('
-        select user.id, user.prenom, user.nom, user.photo, user.date_inscription 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription, user.email, user.admin 
         from user 
         where user.id = ?',$idUser);
         return $query->result_array();
+    }
+
+    public function exists($idUser){
+        $query = $this->db->query('
+        select user.id
+        from user 
+        where user.id = ?',$idUser);
+        $exists = $query->row_array();
+        if(intval($exists)==null){
+            return false;
+        }
+        return true;
     }
 
     public function login(){
@@ -39,6 +51,27 @@ class UserModel extends CI_Model{
                 return false;
             }
         }
+    }
+
+    public function isAdmin($idUser){
+        $query = $this->db->query('
+        select user.admin
+        from user 
+        where user.id = ?',$idUser);
+        $val = $query->row_array();
+        if(intval($val)==1){
+            return true;
+        }
+        return false;
+    }
+
+    public function delete($idUser){
+        $this->db->query('DELETE FROM likers WHERE idLiker = ?',$idUser);
+        $this->db->query('DELETE FROM comment WHERE idUser = ?',$idUser);
+        $this->db->query('DELETE FROM post WHERE idUser = ?',$idUser);
+        $this->db->query('DELETE FROM follow WHERE idFollower = ?',$idUser);
+        $this->db->query('DELETE FROM userTokens WHERE idUser = ?',$idUser);
+        $this->db->query('DELETE FROM user WHERE id = ?',$idUser);
     }
 
     /* STATE 1 = FOLLOWING STATE 0 = UNFOLLOWING */

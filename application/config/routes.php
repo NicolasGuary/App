@@ -5,6 +5,7 @@ $route['posts/update/(:any)'] = 'posts/update/$1';
 
 $route['users/logout'] = 'users/logout';
 $route['users/follow'] = 'users/follow';
+$route['users/edit/(:any)'] = 'users/edit/$1';
 $route['users/following/(:any)'] = 'users/following/$1';
 $route['users/followers/(:any)'] = 'users/followers/$1';
 $route['users/register'] = 'users/register';

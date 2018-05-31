@@ -4,6 +4,33 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-12">
+                    <!--Delete user button-->
+                    <?php if ($user['id'] == $loggedUser[0]['id'] || $loggedUser[0]['admin']) :?>
+                        <button name="delete" value="delete" data-toggle="modal" data-target="#deletePost" class="btn btn-danger ml-2 mt-1 mb-2 float-right">Delete</button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="deletePost" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="logout-warning">Warning</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure you want to delete your profile? All your posts, comments and likes will be deleted.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <?php echo form_open('users/delete/'.$user['id']);?>
+                                        <button type="submit" name="delete" value="delete" class="btn btn-danger">Delete</button>
+                                        <?php echo form_close();?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif;?>
+                    <!--End of user post-->
                     <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $user['photo'];?>" id="profile-image1" class="ml-auto mr-4 d-block img-thumbnail img-responsive float-left" height="200" width="200">
                     <h1><span class="mt2 mb-2 text-uppercase font-weight-bold"><a class="text-dark bio" href="<?php echo site_url('/users/'.$user['id']);?>"><?php echo $user['prenom']." ".$user['nom'];?></span></h1></a>
                     <small class="font-weight-light mt-2"> joined: <?php echo $user['date_inscription'];?></small>
@@ -117,7 +144,7 @@
                     <?php endif;?>
                     <!--END LIKE-->
                     <!--Edit button-->
-                    <?php if ($post['idUser'] == $loggedUser[0]['id']) :?>
+                    <?php if ($post['idUser'] == $loggedUser[0]['id'] || $loggedUser[0]['admin']) :?>
                         <button type="button" class="btn btn-secondary mt-1 mb-2 mr-3" data-toggle="modal" data-target="#editTrack">
                             Edit
                         </button>
@@ -154,7 +181,7 @@
                     <?php endif;?>
                     <!--End of edit post-->
                     <!--Delete post button-->
-                    <?php if ($post['idUser'] == $loggedUser[0]['id']) :?>
+                    <?php if ($post['idUser'] == $loggedUser[0]['id'] || $loggedUser[0]['admin']) :?>
                         <button name="delete" value="delete" data-toggle="modal" data-target="#deletePost" class="btn btn-danger mt-1 mb-2">Delete</button>
                         <!-- Modal -->
                         <div class="modal fade" id="deletePost" tabindex="-1" role="dialog" aria-hidden="true">

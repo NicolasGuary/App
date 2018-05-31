@@ -182,7 +182,8 @@ class Posts extends CI_Controller{
         $idLogged = $this->CookieModel->isLoggedIn();
         $idAuthor = $this->PostModel->getAuthor($idPost);
         $idAuthor = intval($idAuthor[0]['idUser']);
-        if (isset($idLogged) && $idLogged == $idAuthor) {
+        $isAdmin = $this->UserModel->isAdmin($idLogged);
+        if (isset($idLogged) && ($idLogged == $idAuthor || $isAdmin)) {
             $this->PostModel->deletePost($idPost);
             redirect('posts');
         } else {

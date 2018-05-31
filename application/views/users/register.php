@@ -53,7 +53,7 @@
                             <input class="btn btn-primary btn mt-2 mb-5" name="submit" type="submit" value="Sign Up">
                         </div>
                     </div>
-                <?php echo form_close();?>
+                    <?php echo form_close();?>
             </section>
         </div>
     </div>
