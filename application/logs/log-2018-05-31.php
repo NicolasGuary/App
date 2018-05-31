@@ -151,3 +151,6 @@ ERROR - 2018-05-31 19:12:52 --> Severity: Notice --> Undefined offset: 0 /Applic
 ERROR - 2018-05-31 19:12:52 --> Severity: Notice --> Undefined offset: 1 /Applications/MAMP/htdocs/App/application/views/posts/index.php 67
 ERROR - 2018-05-31 19:13:11 --> Severity: Notice --> Undefined offset: 0 /Applications/MAMP/htdocs/App/application/views/posts/index.php 67
 ERROR - 2018-05-31 19:13:11 --> Severity: Notice --> Undefined offset: 1 /Applications/MAMP/htdocs/App/application/views/posts/index.php 67
+ERROR - 2018-05-31 21:09:18 --> Severity: error --> Exception: Call to undefined function word_limiter() /Applications/MAMP/htdocs/App/application/views/posts/timeline.php 68
+ERROR - 2018-05-31 21:09:22 --> Severity: error --> Exception: Call to undefined function word_limiter() /Applications/MAMP/htdocs/App/application/views/posts/timeline.php 68
+ERROR - 2018-05-31 21:11:40 --> Severity: error --> Exception: Call to undefined function word_limiter() /Applications/MAMP/htdocs/App/application/views/posts/index.php 137

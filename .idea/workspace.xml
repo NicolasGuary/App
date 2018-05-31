@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9b84de5-abce-459f-ab19-3cfc366a3300" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/autoload.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/templates/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/logs/log-2018-05-31.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/logs/log-2018-05-31.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/posts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/posts/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/posts/timeline.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/posts/timeline.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,20 +22,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="timeline.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="timeline.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/posts/timeline.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="86" column="84" selection-start-line="86" selection-start-column="84" selection-end-line="86" selection-end-column="84" />
+            <state relative-caret-position="371">
+              <caret line="194" column="106" selection-start-line="194" selection-start-column="106" selection-end-line="194" selection-end-column="106" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/templates/header.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/posts/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="37" column="155" selection-start-line="37" selection-start-column="155" selection-end-line="37" selection-end-column="155" />
+            <state relative-caret-position="514">
+              <caret line="191" column="102" selection-start-line="191" selection-start-column="44" selection-end-line="191" selection-end-column="102" />
             </state>
           </provider>
         </entry>
@@ -98,16 +102,16 @@
         <option value="$PROJECT_DIR$/application/controllers/Comments.php" />
         <option value="$PROJECT_DIR$/application/config/config.php" />
         <option value="$PROJECT_DIR$/application/libraries/Cloudinarylib.php" />
-        <option value="$PROJECT_DIR$/application/config/autoload.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/application/views/users/following.php" />
         <option value="$PROJECT_DIR$/application/views/users/followers.php" />
         <option value="$PROJECT_DIR$/application/controllers/Users.php" />
         <option value="$PROJECT_DIR$/application/views/posts/view.php" />
         <option value="$PROJECT_DIR$/application/views/users/profile.php" />
+        <option value="$PROJECT_DIR$/application/views/templates/header.php" />
+        <option value="$PROJECT_DIR$/application/config/autoload.php" />
         <option value="$PROJECT_DIR$/application/views/posts/index.php" />
         <option value="$PROJECT_DIR$/application/views/posts/timeline.php" />
-        <option value="$PROJECT_DIR$/application/views/templates/header.php" />
       </list>
     </option>
   </component>
@@ -178,6 +182,12 @@
               <item name="App" type="b2602c69:ProjectViewProjectNode" />
               <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="App" type="b2602c69:ProjectViewProjectNode" />
@@ -285,12 +295,12 @@
       <option name="presentableId" value="Default" />
       <updated>1526492028998</updated>
       <workItem from="1526492030273" duration="178637000" />
-      <workItem from="1527750070626" duration="16496000" />
+      <workItem from="1527750070626" duration="17193000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195133000" />
+    <option name="totallyTimeSpent" value="195830000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="22" width="1280" height="1013" extended-state="0" />
@@ -538,13 +548,6 @@
         <state relative-caret-position="-4140" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="60" column="77" selection-start-line="60" selection-start-column="77" selection-end-line="60" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/libraries/Cloudinarylib.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -601,24 +604,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/templates/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="37" column="155" selection-start-line="37" selection-start-column="155" selection-end-line="37" selection-end-column="155" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="686">
+          <caret line="91" column="56" selection-start-line="91" selection-start-column="56" selection-end-line="91" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/posts/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="223" column="85" selection-start-line="223" selection-start-column="85" selection-end-line="223" selection-end-column="85" />
+        <state relative-caret-position="514">
+          <caret line="191" column="102" selection-start-line="191" selection-start-column="44" selection-end-line="191" selection-end-column="102" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/posts/timeline.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="86" column="84" selection-start-line="86" selection-start-column="84" selection-end-line="86" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="37" column="155" selection-start-line="37" selection-start-column="155" selection-end-line="37" selection-end-column="155" />
+        <state relative-caret-position="371">
+          <caret line="194" column="106" selection-start-line="194" selection-start-column="106" selection-end-line="194" selection-end-column="106" />
         </state>
       </provider>
     </entry>

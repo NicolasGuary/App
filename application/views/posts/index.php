@@ -134,7 +134,7 @@
                 <h5 class="card-title text-center"><?php echo $post['titre'];?></h5>
                 <div class="mb-3 text-center embed-responsive embed-responsive-16by9 col-8 mx-auto"> <iframe class="embed-responsive-item" width="600" height="330" src="<?php echo "https://www.youtube.com/embed/".$post['link'];?>" frameborder="0" allow="autoplay;" allowfullscreen></iframe></div>
                 <hr>
-                <p class="bg-light mt-2 text-center"><?php echo $post['contenu'];?></p>
+                <p class="bg-light mt-2 text-center"><?php echo word_limiter($post['contenu'],300,'&#8230;');?></p>
                 <div class="row">
                     <!-- Like/Unlike button according to the state in database for current post -->
                     <?php if (!isset($stateLike[$iterate]['state'])) : ;?>
@@ -189,7 +189,7 @@
                             </div>
                             <h3><span class="mt2 mb-2 badge badge-light"><a class="bio" href="<?php echo site_url('/users/'.$comment['idUser']);?>"><?php echo $comment['prenom']." ".$comment['nom'];?></span></h3></a>
                             <p class="text-secondary col-lg-6 col-sm-12 mt-3 mr-auto"> published: <?php echo $comment['commented_at']?></p>
-                            <p class="ml-3"><?php echo $comment['body'];?></p>
+                            <p class="ml-3"><?php echo word_limiter($comment['body'],300,'&#8230;');?></p>
                         </div>
                     </div>
                     <div class="container float-right">
