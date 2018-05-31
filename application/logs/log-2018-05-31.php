@@ -70,3 +70,14 @@ ERROR - 2018-05-31 07:58:45 --> Query error: You have an error in your SQL synta
         where user.id = ?
 ERROR - 2018-05-31 08:18:35 --> Severity: Notice --> Undefined offset: 0 /Applications/MAMP/htdocs/App/application/controllers/Users.php 118
 ERROR - 2018-05-31 08:19:26 --> Severity: Notice --> Undefined offset: 0 /Applications/MAMP/htdocs/App/application/controllers/Users.php 119
+ERROR - 2018-05-31 10:04:04 --> 404 Page Not Found: Localhost/App
+ERROR - 2018-05-31 10:04:04 --> 404 Page Not Found: Localhost/App
+ERROR - 2018-05-31 10:04:04 --> 404 Page Not Found: Localhost/App
+ERROR - 2018-05-31 10:04:04 --> 404 Page Not Found: Localhost/App
+ERROR - 2018-05-31 10:04:04 --> 404 Page Not Found: Localhost/App
+ERROR - 2018-05-31 10:04:05 --> 404 Page Not Found: Localhost/App
+ERROR - 2018-05-31 10:04:18 --> 404 Page Not Found: Localhost/App
+ERROR - 2018-05-31 10:04:18 --> 404 Page Not Found: Localhost/App
+ERROR - 2018-05-31 10:04:18 --> 404 Page Not Found: Localhost/App
+ERROR - 2018-05-31 10:04:18 --> 404 Page Not Found: Localhost/App
+ERROR - 2018-05-31 10:04:18 --> 404 Page Not Found: Localhost/App
