@@ -81,3 +81,49 @@ ERROR - 2018-05-31 10:04:18 --> 404 Page Not Found: Localhost/App
 ERROR - 2018-05-31 10:04:18 --> 404 Page Not Found: Localhost/App
 ERROR - 2018-05-31 10:04:18 --> 404 Page Not Found: Localhost/App
 ERROR - 2018-05-31 10:04:18 --> 404 Page Not Found: Localhost/App
+ERROR - 2018-05-31 10:31:21 --> Query error: No database selected - Invalid query: 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription, user.email, user.admin 
+        from user 
+        where user.id = NULL
+ERROR - 2018-05-31 10:31:30 --> Query error: No database selected - Invalid query: 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription, user.email, user.admin 
+        from user 
+        where user.id = NULL
+ERROR - 2018-05-31 10:31:33 --> Query error: No database selected - Invalid query: 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription, user.email, user.admin 
+        from user 
+        where user.id = NULL
+ERROR - 2018-05-31 10:31:37 --> Query error: No database selected - Invalid query: 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription, user.email, user.admin 
+        from user 
+        where user.id = NULL
+ERROR - 2018-05-31 10:32:25 --> Severity: error --> Exception: Using $this when not in object context /Applications/MAMP/htdocs/App/application/config/database.php 98
+ERROR - 2018-05-31 10:34:57 --> Query error: No database selected - Invalid query: 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription, user.email, user.admin 
+        from user 
+        where user.id = NULL
+ERROR - 2018-05-31 10:39:26 --> Query error: No database selected - Invalid query: 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription, user.email, user.admin 
+        from user 
+        where user.id = NULL
+ERROR - 2018-05-31 10:39:28 --> Query error: No database selected - Invalid query: 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription, user.email, user.admin 
+        from user 
+        where user.id = NULL
+ERROR - 2018-05-31 10:39:29 --> Query error: No database selected - Invalid query: 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription, user.email, user.admin 
+        from user 
+        where user.id = NULL
+ERROR - 2018-05-31 10:39:30 --> Query error: No database selected - Invalid query: 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription, user.email, user.admin 
+        from user 
+        where user.id = NULL
+ERROR - 2018-05-31 10:39:33 --> Query error: No database selected - Invalid query: 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription, user.email, user.admin 
+        from user 
+        where user.id = NULL
+ERROR - 2018-05-31 10:39:57 --> Query error: No database selected - Invalid query: 
+        select user.id, user.prenom, user.nom, user.photo, user.date_inscription, user.email, user.admin 
+        from user 
+        where user.id = NULL
+ERROR - 2018-05-31 10:40:36 --> Query error: No database selected - Invalid query: SELECT token FROM userTokens WHERE idUser = '9'
