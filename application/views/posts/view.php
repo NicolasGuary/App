@@ -4,7 +4,7 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-12">
-                    <?php if ($post['idUser'] == $loggedUser[0]['id']) :?>
+                    <?php if ($post['idUser'] == $loggedUser[0]['id'] || $loggedUser[0]['admin']) :?>
                         <!--Edit button-->
                         <button type="button" class="btn btn-sm btn-secondary float-right ml-2" data-toggle="modal" data-target="#editTrack">
                             Edit
@@ -42,7 +42,7 @@
                     <?php endif;?>
                     <!--End of edit post-->
                     <!--Delete post button-->
-                    <?php if ($post['idUser'] == $loggedUser[0]['id']) :?>
+                    <?php if ($post['idUser'] == $loggedUser[0]['id'] || $loggedUser[0]['admin']) :?>
                         <button data-toggle="modal" data-target="#deletePost" type="submit" name="delete" value="delete"  class="btn btn-danger btn-sm float-right">Delete</button>
                         <!-- Modal -->
                         <div class="modal fade" id="deletePost" tabindex="-1" role="dialog" aria-hidden="true">
@@ -154,7 +154,7 @@
                         </div>
                         <div class="container float-right">
                             <!--Edit comment-->
-                            <?php if ($comment['idUser'] == $loggedUser[0]['id']) :?>
+                            <?php if ($comment['idUser'] == $loggedUser[0]['id'] || $loggedUser[0]['admin']) :?>
                                 <button type="submit" name="edit" value="edit" class="float-right mb-1 btn btn-outline-secondary" data-toggle="modal" data-target="#editComment">Edit</button>
                                 <!--Modal-->
                                 <div class="modal fade" id="editComment" tabindex="-1" role="dialog" aria-hidden="true">
@@ -178,7 +178,7 @@
                             <?php endif;?>
                             <!--End of edit comment-->
                             <!--Delete comment button-->
-                            <?php if ($comment['idUser'] == $loggedUser[0]['id']) :?>
+                            <?php if ($comment['idUser'] == $loggedUser[0]['id'] || $loggedUser[0]['admin']) :?>
                                 <button type="submit" name="delete" value="delete" data-toggle="modal" data-target="#deleteComment" class="float-right mb-1 mr-1 btn btn-outline-danger">Delete</button>
                                 <!-- Modal -->
                                 <div class="modal fade" id="deleteComment" tabindex="-1" role="dialog" aria-hidden="true">

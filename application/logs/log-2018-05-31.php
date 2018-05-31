@@ -127,3 +127,6 @@ ERROR - 2018-05-31 10:39:57 --> Query error: No database selected - Invalid quer
         from user 
         where user.id = NULL
 ERROR - 2018-05-31 10:40:36 --> Query error: No database selected - Invalid query: SELECT token FROM userTokens WHERE idUser = '9'
+ERROR - 2018-05-31 12:02:06 --> Severity: Notice --> Undefined index: title /Applications/MAMP/htdocs/App/application/models/PostModel.php 85
+ERROR - 2018-05-31 12:05:29 --> Severity: Notice --> Undefined index: title /Applications/MAMP/htdocs/App/application/models/PostModel.php 85
+ERROR - 2018-05-31 12:07:28 --> Severity: Notice --> Undefined index: title /Applications/MAMP/htdocs/App/application/models/PostModel.php 85

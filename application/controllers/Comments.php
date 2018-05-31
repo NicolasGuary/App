@@ -41,7 +41,8 @@
             $idLogged = $this->CookieModel->isLoggedIn();
             $idAuthor = $this->CommentModel->getAuthor($idComment);
             $idAuthor = intval($idAuthor[0]['idUser']);
-            if (isset($idLogged) && $idLogged == $idAuthor) {
+            $isAdmin = $this->UserModel->isAdmin($idLogged);
+            if (isset($idLogged) && ($idLogged == $idAuthor || $isAdmin )) {
                 $this->CommentModel->deleteComment($idComment);
                 redirect('posts');
             } else {
@@ -54,7 +55,8 @@
             $idLogged = $this->CookieModel->isLoggedIn();
             $idAuthor = $this->CommentModel->getAuthor($idComment);
             $idAuthor = intval($idAuthor[0]['idUser']);
-            if (isset($idLogged) && $idLogged == $idAuthor) {
+            $isAdmin = $this->UserModel->isAdmin($idLogged);
+            if (isset($idLogged) && ($idLogged == $idAuthor || $isAdmin )) {
                 $this->CommentModel->updateComment($idComment);
                 redirect('posts');
             } else {
