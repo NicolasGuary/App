@@ -28,7 +28,7 @@ class Users extends CI_Controller
 
                 if (!$this->upload->do_upload()) {
                     $errors = array('error' => $this->upload->display_errors());
-                    $user_image = 'default.png';
+                    $user_image = 'http://res.cloudinary.com/hnbbqlgyo/image/upload/v1527791733/default.jpg';
                 } else {
                     $data = array('upload_data' => $this->upload->data());
                     $user_image = $this->upload->data('file_name');
