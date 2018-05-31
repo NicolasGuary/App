@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9b84de5-abce-459f-ab19-3cfc366a3300" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/logs/log-2018-05-31.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/logs/log-2018-05-31.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/posts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/posts/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/posts/timeline.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/posts/timeline.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/posts/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/posts/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/users/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/users/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/templates/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/templates/header.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,11 +18,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="timeline.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="timeline.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/posts/timeline.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
               <caret line="86" column="84" selection-start-line="86" selection-start-column="84" selection-end-line="86" selection-end-column="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/templates/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="37" column="155" selection-start-line="37" selection-start-column="155" selection-end-line="37" selection-end-column="155" />
             </state>
           </provider>
         </entry>
@@ -84,7 +88,6 @@
         <option value="$PROJECT_DIR$/application/views/posts/edit.php" />
         <option value="$PROJECT_DIR$/application/models/CommentModel.php" />
         <option value="$PROJECT_DIR$/application/config/routes.php" />
-        <option value="$PROJECT_DIR$/application/views/templates/header.php" />
         <option value="$PROJECT_DIR$/application/models/PostModel.php" />
         <option value="$PROJECT_DIR$/application/views/users/edit.php" />
         <option value="$PROJECT_DIR$/application/views/users/register.php" />
@@ -104,6 +107,7 @@
         <option value="$PROJECT_DIR$/application/views/users/profile.php" />
         <option value="$PROJECT_DIR$/application/views/posts/index.php" />
         <option value="$PROJECT_DIR$/application/views/posts/timeline.php" />
+        <option value="$PROJECT_DIR$/application/views/templates/header.php" />
       </list>
     </option>
   </component>
@@ -281,12 +285,12 @@
       <option name="presentableId" value="Default" />
       <updated>1526492028998</updated>
       <workItem from="1526492030273" duration="178637000" />
-      <workItem from="1527750070626" duration="16293000" />
+      <workItem from="1527750070626" duration="16496000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194930000" />
+    <option name="totallyTimeSpent" value="195133000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="22" width="1280" height="1013" extended-state="0" />
@@ -475,13 +479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/templates/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="36" column="90" selection-start-line="36" selection-start-column="90" selection-end-line="36" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -615,6 +612,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="86" column="84" selection-start-line="86" selection-start-column="84" selection-end-line="86" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/templates/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="37" column="155" selection-start-line="37" selection-start-column="155" selection-end-line="37" selection-end-column="155" />
         </state>
       </provider>
     </entry>
