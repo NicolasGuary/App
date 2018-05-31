@@ -147,3 +147,7 @@ ERROR - 2018-05-31 18:14:51 --> Severity: error --> Exception: syntax error, une
 ERROR - 2018-05-31 18:15:14 --> Severity: error --> Exception: Error in sending request to server - couldn't open file "assets/img/uploads/http://res.cloudinary.com/hnbbqlgyo/image/upload/c_fill,h_500,w_500/6ea7504750a51e3c1ebdf88ed24213ff.png" /Applications/MAMP/htdocs/App/application/libraries/cloudinary/src/Uploader.php 305
 ERROR - 2018-05-31 18:24:05 --> Severity: Notice --> Array to string conversion /Applications/MAMP/htdocs/App/system/database/DB_driver.php 1477
 ERROR - 2018-05-31 18:24:05 --> Query error: Unknown column 'Array' in 'field list' - Invalid query: INSERT INTO `user` (`prenom`, `nom`, `email`, `photo`, `mdp`) VALUES ('cscscsc', 'scscscsc', 'final@finak.com', Array, '$2y$10$FhaF9AW7zKbelpscaZ3E9uy2VRZ9hFOHk5OKVR4M70Tub48gvCGjW')
+ERROR - 2018-05-31 19:12:52 --> Severity: Notice --> Undefined offset: 0 /Applications/MAMP/htdocs/App/application/views/posts/index.php 67
+ERROR - 2018-05-31 19:12:52 --> Severity: Notice --> Undefined offset: 1 /Applications/MAMP/htdocs/App/application/views/posts/index.php 67
+ERROR - 2018-05-31 19:13:11 --> Severity: Notice --> Undefined offset: 0 /Applications/MAMP/htdocs/App/application/views/posts/index.php 67
+ERROR - 2018-05-31 19:13:11 --> Severity: Notice --> Undefined offset: 1 /Applications/MAMP/htdocs/App/application/views/posts/index.php 67

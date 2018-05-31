@@ -44,10 +44,10 @@
                     <div class="col-12">
                         <!--Edit button-->
                         <?php if ($post['idUser'] == $loggedUser[0]['id'] || $loggedUser[0]['admin']) :?>
-                            <button type="button" class="btn btn-sm btn-secondary float-right ml-2" data-toggle="modal" data-target="#editTrack">
+                            <button type="button" class="btn btn-sm btn-secondary float-right ml-2" data-toggle="modal" data-target="#editTrack<?php echo $iterate;?>">
                                 Edit
                             </button>
-                            <div class="modal fade" id="editTrack" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal fade" id="editTrack<?php echo $iterate;?>" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
                                         <?php echo form_open('posts/update/'.$post['id']);?>
@@ -61,10 +61,10 @@
                                                     <div class="col-10">
                                                         <div class="form-group">
                                                             <label>Your favorite track of the day</label>
-                                                            <input name="link" type="text" class="form-control" placeholder="YouTube URL" value="<?php echo $post['link'];?>">
+                                                            <input name="link" type="text" class="form-control" placeholder="YouTube URL" value="<?php echo $posts[$iterate]['link'];?>">
                                                             <small type="text" class="form-text text-muted">Video will be displayed on your post</small>
                                                             <label class="mt-2">Say something nice about it</label>
-                                                            <textarea name="contenu" class="form-control" rows="3"><?php echo $post['contenu'];?></textarea>
+                                                            <textarea name="contenu" class="form-control" rows="3"><?php echo $posts[$iterate]['contenu'];?></textarea>
                                                         </div>
                                                         <div class="mt-2 mb-5 text-center">
                                                             <button type="submit" class="btn btn-outline-primary ">Update</button>
@@ -81,9 +81,9 @@
                         <!--End of edit post-->
                         <!--Delete post button-->
                         <?php if ($post['idUser'] == $loggedUser[0]['id'] || $loggedUser[0]['admin']) :?>
-                            <button data-toggle="modal" data-target="#deletePost" type="submit" name="delete" value="delete"  class="btn btn-danger btn-sm float-right">Delete</button>
+                            <button data-toggle="modal" data-target="#deletePost<?php echo $iterate;?>" type="submit" name="delete" value="delete"  class="btn btn-danger btn-sm float-right">Delete</button>
                             <!-- Modal -->
-                            <div class="modal fade" id="deletePost" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal fade" id="deletePost<?php echo $iterate;?>" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -125,8 +125,6 @@
                             <span class="badge badge-pill badge-primary"><?php echo $followers[$iterate][0]['followers'];?> Followers</span>
                             <?php echo form_close();?>
                         <?php endif;?>
-
-
                     </div>
                 </div>
                 <small class="font-weight-light mt-2"><a href="<?php echo site_url('/posts/'.$post['id']);?>">Posted: <?php echo $post['date'];?></small></a>
@@ -179,6 +177,7 @@
             <!--Section commentaires-->
             <div class="card-footer">
                 <?php $com = false;?>
+                <?php $i=0;?>
                 <?php foreach ($comments as $comment ) : ?>
                 <?php if($comment['idPost'] === $post['id']) : ?>
                 <?php $com= true;?>
@@ -196,9 +195,9 @@
                     <div class="container float-right">
                         <!--Edit comment-->
                         <?php if ($comment['idUser'] == $loggedUser[0]['id'] || $loggedUser[0]['admin']) :?>
-                        <button type="submit" name="edit" value="edit" class="float-right mb-1 btn btn-outline-secondary" data-toggle="modal" data-target="#editComment">Edit</button>
+                        <button type="submit" name="edit" value="edit" class="float-right mb-1 btn btn-outline-secondary" data-toggle="modal" data-target="#editComment<?php echo $i;?>">Edit</button>
                         <!--Modal-->
-                        <div class="modal fade" id="editComment" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal fade" id="editComment<?php echo $i;?>" tabindex="-1" role="dialog" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
                                     <?php echo form_open('comments/update/'.$comment['idComment']); ?>
@@ -220,9 +219,9 @@
                     <!--End of edit comment-->
                         <!--Delete comment button-->
                         <?php if ($comment['idUser'] == $loggedUser[0]['id'] || $loggedUser[0]['admin']) :?>
-                            <button type="submit" name="delete" value="delete" data-toggle="modal" data-target="#deleteComment" class="float-right mb-1 mr-1 btn btn-outline-danger">Delete</button>
+                            <button type="submit" name="delete" value="delete" data-toggle="modal" data-target="#deleteComment<?php echo $i;?>" class="float-right mb-1 mr-1 btn btn-outline-danger">Delete</button>
                             <!-- Modal -->
-                            <div class="modal fade" id="deleteComment" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal fade" id="deleteComment<?php echo $i;?>" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -248,6 +247,7 @@
                     </div>
                 </div>
             <?php endif;?>
+                <?php $i++;?>
             <?php endforeach;?>
             <?php if(!($com)) : ?>
                 <p class="ml-3 mt-2">No comments yet.</p>

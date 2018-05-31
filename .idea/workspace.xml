@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9b84de5-abce-459f-ab19-3cfc366a3300" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/Users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/logs/log-2018-05-31.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/logs/log-2018-05-31.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/posts/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/posts/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/posts/timeline.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/posts/timeline.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/posts/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/posts/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/users/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/users/profile.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Users.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Users.php">
+      <file leaf-file-name="timeline.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/posts/timeline.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="30" column="107" selection-start-line="30" selection-start-column="107" selection-end-line="30" selection-end-column="107" />
+            <state relative-caret-position="396">
+              <caret line="86" column="84" selection-start-line="86" selection-start-column="84" selection-end-line="86" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -92,13 +97,13 @@
         <option value="$PROJECT_DIR$/application/libraries/Cloudinarylib.php" />
         <option value="$PROJECT_DIR$/application/config/autoload.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
-        <option value="$PROJECT_DIR$/application/views/users/profile.php" />
         <option value="$PROJECT_DIR$/application/views/users/following.php" />
         <option value="$PROJECT_DIR$/application/views/users/followers.php" />
-        <option value="$PROJECT_DIR$/application/views/posts/timeline.php" />
-        <option value="$PROJECT_DIR$/application/views/posts/view.php" />
-        <option value="$PROJECT_DIR$/application/views/posts/index.php" />
         <option value="$PROJECT_DIR$/application/controllers/Users.php" />
+        <option value="$PROJECT_DIR$/application/views/posts/view.php" />
+        <option value="$PROJECT_DIR$/application/views/users/profile.php" />
+        <option value="$PROJECT_DIR$/application/views/posts/index.php" />
+        <option value="$PROJECT_DIR$/application/views/posts/timeline.php" />
       </list>
     </option>
   </component>
@@ -147,7 +152,7 @@
     <option name="x" value="1280" />
     <option name="y" value="22" />
     <option name="width" value="1280" />
-    <option name="height" value="1014" />
+    <option name="height" value="1013" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -179,13 +184,29 @@
             <path>
               <item name="App" type="b2602c69:ProjectViewProjectNode" />
               <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="App" type="b2602c69:ProjectViewProjectNode" />
               <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="img" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="posts" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="App" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="users" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -260,15 +281,15 @@
       <option name="presentableId" value="Default" />
       <updated>1526492028998</updated>
       <workItem from="1526492030273" duration="178637000" />
-      <workItem from="1527750070626" duration="14067000" />
+      <workItem from="1527750070626" duration="16293000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192704000" />
+    <option name="totallyTimeSpent" value="194930000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="22" width="1280" height="1014" extended-state="0" />
+    <frame x="1280" y="22" width="1280" height="1013" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21875" />
@@ -481,13 +502,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Posts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="197" selection-start-line="197" selection-end-line="197" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
@@ -548,13 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/users/profile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="94" column="77" selection-start-line="94" selection-start-column="68" selection-end-line="94" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/users/following.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="583">
@@ -569,31 +576,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/posts/timeline.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/Users.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
-          <caret line="109" column="68" selection-start-line="109" selection-start-column="63" selection-end-line="109" selection-end-column="68" />
+          <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Posts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2955">
+          <caret line="197" selection-start-line="197" selection-end-line="197" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/posts/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="69" column="45" lean-forward="true" selection-start-line="69" selection-start-column="45" selection-end-line="69" selection-end-column="45" />
+        <state relative-caret-position="472">
+          <caret line="184" column="84" selection-start-line="184" selection-start-column="84" selection-end-line="184" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/users/profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="186" column="84" selection-start-line="186" selection-start-column="84" selection-end-line="186" selection-end-column="84" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/posts/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="108" column="49" selection-start-line="108" selection-start-column="49" selection-end-line="108" selection-end-column="49" />
+        <state relative-caret-position="241">
+          <caret line="223" column="85" selection-start-line="223" selection-start-column="85" selection-end-line="223" selection-end-column="85" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Users.php">
+    <entry file="file://$PROJECT_DIR$/application/views/posts/timeline.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="30" column="107" selection-start-line="30" selection-start-column="107" selection-end-line="30" selection-end-column="107" />
+        <state relative-caret-position="396">
+          <caret line="86" column="84" selection-start-line="86" selection-start-column="84" selection-end-line="86" selection-end-column="84" />
         </state>
       </provider>
     </entry>

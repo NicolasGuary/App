@@ -139,6 +139,7 @@
         </div>
         <!--Section commentaires-->
         <div class="card-footer">
+            <?php $i=0;?>
             <?php if($comments) : ?>
                 <?php foreach ($comments as $comment ) : ?>
                     <div class="card mb-2">
@@ -155,9 +156,9 @@
                         <div class="container float-right">
                             <!--Edit comment-->
                             <?php if ($comment['idUser'] == $loggedUser[0]['id'] || $loggedUser[0]['admin']) :?>
-                                <button type="submit" name="edit" value="edit" class="float-right mb-1 btn btn-outline-secondary" data-toggle="modal" data-target="#editComment">Edit</button>
+                                <button type="submit" name="edit" value="edit" class="float-right mb-1 btn btn-outline-secondary" data-toggle="modal" data-target="#editComment<?php echo $i;?>">Edit</button>
                                 <!--Modal-->
-                                <div class="modal fade" id="editComment" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal fade" id="editComment<?php echo $i;?>" tabindex="-1" role="dialog" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
                                             <?php echo form_open('comments/update/'.$comment['idComment']); ?>
@@ -179,9 +180,9 @@
                             <!--End of edit comment-->
                             <!--Delete comment button-->
                             <?php if ($comment['idUser'] == $loggedUser[0]['id'] || $loggedUser[0]['admin']) :?>
-                                <button type="submit" name="delete" value="delete" data-toggle="modal" data-target="#deleteComment" class="float-right mb-1 mr-1 btn btn-outline-danger">Delete</button>
+                                <button type="submit" name="delete" value="delete" data-toggle="modal" data-target="#deleteComment<?php echo $i;?>" class="float-right mb-1 mr-1 btn btn-outline-danger">Delete</button>
                                 <!-- Modal -->
-                                <div class="modal fade" id="deleteComment" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal fade" id="deleteComment<?php echo $i;?>" tabindex="-1" role="dialog" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -206,6 +207,7 @@
                             <!--End of delete comment-->
                         </div>
                     </div>
+                <?php $i++;?>
                 <?php endforeach;?>
             <?php else : ?>
                 <p class="ml-3 mt-2">No comments yet.</p>

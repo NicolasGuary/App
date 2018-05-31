@@ -145,10 +145,10 @@
                     <!--END LIKE-->
                     <!--Edit button-->
                     <?php if ($post['idUser'] == $loggedUser[0]['id'] || $loggedUser[0]['admin']) :?>
-                        <button type="button" class="btn btn-secondary mt-1 mb-2 mr-3" data-toggle="modal" data-target="#editTrack">
+                        <button type="button" class="btn btn-secondary mt-1 mb-2 mr-3" data-toggle="modal" data-target="#editTrack<?php echo $iterate;?>">
                             Edit
                         </button>
-                        <div class="modal fade" id="editTrack" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal fade" id="editTrack<?php echo $iterate;?>" tabindex="-1" role="dialog" aria-hidden="true">
                             <div class="modal-dialog modal-lg" role="document">
                                 <div class="modal-content">
                                     <?php echo form_open('posts/update/'.$post['id']);?>
@@ -182,9 +182,9 @@
                     <!--End of edit post-->
                     <!--Delete post button-->
                     <?php if ($post['idUser'] == $loggedUser[0]['id'] || $loggedUser[0]['admin']) :?>
-                        <button name="delete" value="delete" data-toggle="modal" data-target="#deletePost" class="btn btn-danger mt-1 mb-2">Delete</button>
+                        <button name="delete" value="delete" data-toggle="modal" data-target="#deletePost<?php echo $iterate;?>" class="btn btn-danger mt-1 mb-2">Delete</button>
                         <!-- Modal -->
-                        <div class="modal fade" id="deletePost" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal fade" id="deletePost<?php echo $iterate;?>" tabindex="-1" role="dialog" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
