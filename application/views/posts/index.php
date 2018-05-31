@@ -180,7 +180,7 @@
             <div class="card-footer">
                 <?php $com = false;?>
                 <?php foreach ($comments as $comment ) : ?>
-                <?php if($comment['idPost'] === $post['id'] || $loggedUser[0]['admin']) : ?>
+                <?php if($comment['idPost'] === $post['id']) : ?>
                 <?php $com= true;?>
                 <div class="card mb-2">
                     <div class="row">
