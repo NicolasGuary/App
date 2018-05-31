@@ -31,8 +31,11 @@ class Users extends CI_Controller
                     $user_image = 'default.png';
                 } else {
                     $data = array('upload_data' => $this->upload->data());
-                    //$user_image = $_FILES['userfile']['name'];
                     $user_image = $this->upload->data('file_name');
+                    $uploadResponse = \Cloudinary\Uploader::upload('assets/img/uploads/'.$user_image);
+                    $user_image = $uploadResponse['url'];
+                     //cloudinary_url($user_image, array("width" => 500, "height" => 500, "crop" => "fill"));
+
                 }
                 //HASH PASSWORD BCRYPT
                 $encrypted = password_hash(($this->input->post('mdp')), PASSWORD_DEFAULT);

@@ -68,7 +68,7 @@
                         </div>
                     <?php endif;?>
                     <!--End of delete post-->
-                    <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $post['photo'];?>" id="profile-image1" class="ml-auto mr-4 d-block img-thumbnail img-responsive float-left" height="70" width="70">
+                    <img alt="User Pic" src="<?php echo $post['photo'];?>" id="profile-image1" class="ml-auto mr-4 d-block img-thumbnail img-responsive float-left" height="70" width="70">
                     <h1><span class="text-uppercase font-weight-bold"><a class="text-dark bio" href="<?php echo site_url('/users/'.$post['idUser']);?>"><?php echo $post['prenom']." ".$post['nom'];?></span></h1></a>
                     <!-- Follow/Unfollow button according to the state in database for current user -->
                     <?php if (!isset($state['state'])) : ;?>
@@ -145,7 +145,7 @@
                         <div class="row">
                             <div class="col-10">
                                 <div>
-                                    <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $comment['photo'];?>" id="profile-image1" class="img-thumbnail ml-1 mt-1 mr-3 d-block img-responsive float-left" height="50" width="50">
+                                    <img alt="User Pic" src="<?php echo $comment['photo'];?>" id="profile-image1" class="img-thumbnail ml-1 mt-1 mr-3 d-block img-responsive float-left" height="50" width="50">
                                     <h3><span class="mt2 mb-2 badge badge-light"><a href="<?php echo site_url('/users/'.$comment['idUser']);?>"><?php echo $comment['prenom']." ".$comment['nom'];?></span></h3></a>
                                     <p class="text-secondary bg-light col-lg-6 col-sm-12 mt-3"> published: <?php echo $comment['commented_at']?></p>
                                 </div>

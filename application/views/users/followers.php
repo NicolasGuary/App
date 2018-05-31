@@ -4,7 +4,7 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-12">
-                    <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $user['photo'];?>" id="profile-image1" class="ml-auto mr-4 d-block img-thumbnail img-responsive float-left" height="200" width="200">
+                    <img alt="User Pic" src="<?php echo $user['photo'];?>" id="profile-image1" class="ml-auto mr-4 d-block img-thumbnail img-responsive float-left" height="200" width="200">
                     <h1><span class="mt2 mb-2 text-uppercase font-weight-bold"><a class="text-dark bio" href="<?php echo site_url('/users/'.$user['id']);?>"><?php echo $user['prenom']." ".$user['nom'];?></span></h1></a>
                     <small class="font-weight-light mt-2"> joined: <?php echo $user['date_inscription'];?></small>
                     <hr>
@@ -38,7 +38,7 @@
             <div class="col-3 mb-2">
                 <div class="card hover-shadow h-100">
                     <div class="card-body text-center mx-auto">
-                        <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $follows['photo'];?>" id="profile-image1" class="d-block img-thumbnail img-responsive float-left " height="100" width="100">
+                        <img alt="User Pic" src="<?php echo $follows['photo'];?>" id="profile-image1" class="d-block img-thumbnail img-responsive float-left " height="100" width="100">
                     </div>
                     <footer class="card-footer text-center">
                         <p class="mt-2"><a class="hover-primary" href="<?php echo site_url('/users/'.$follows['id']);?>"><?php echo $follows['prenom']." ".$follows['nom'];?></a></p>
