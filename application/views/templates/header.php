@@ -34,8 +34,6 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href=<?php echo base_url();?>users/<?php echo $loggedUser[0]['id'];?>>View Profile</a>
-                        <a class="nav-item nav-link active" href="<?php echo base_url();?>users/following/<?php echo $loggedUser[0]['id'];?>">Following</a>
-                        <a class="nav-item nav-link active" href="<?php echo base_url();?>users/followers/<?php echo $loggedUser[0]['id'];?>">Followers</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="<?php echo base_url();?>users/logout" data-toggle="modal" data-target="#logout">Log out</a>
                     </div>
