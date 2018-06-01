@@ -155,8 +155,8 @@ class Users extends CI_Controller
         $idLogged = $this->CookieModel->isLoggedIn();
         if ((isset($idLogged)) && $user) {
             $this->UserModel->follow($idUser, $idLogged);
-            $link = base_url().'users/'.$idUser;
-            redirect($link);
+            $httpReferer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'posts';
+            redirect($httpReferer);
         }
     }
 
@@ -165,8 +165,8 @@ class Users extends CI_Controller
         $idLogged = $this->CookieModel->isLoggedIn();
         if ((isset($idLogged)) && $user) {
             $this->UserModel->unfollow($idUser, $idLogged);
-            $link = base_url().'users/'.$idUser;
-            redirect($link);
+            $httpReferer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'posts';
+            redirect($httpReferer);
         }
     }
 

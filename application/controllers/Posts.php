@@ -131,7 +131,7 @@ class Posts extends CI_Controller{
             $idPost = $data['post'][0]['id'];
             $data['comments']= $this->CommentModel->getComments($idPost);
             if(empty($data['post'])){
-                show_404();
+                redirect('users/login');
             }
 
             $idUser = $this->PostModel->getAuthor($idPost);
@@ -169,7 +169,8 @@ class Posts extends CI_Controller{
                 $this->load->view('templates/footer');
             } else {
                 $this->PostModel->createPost($idLogged);
-                redirect('posts');
+                $httpReferer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'posts';
+                redirect($httpReferer);
             }
         }
         else {
@@ -185,7 +186,8 @@ class Posts extends CI_Controller{
         $isAdmin = $this->UserModel->isAdmin($idLogged);
         if (isset($idLogged) && ($idLogged == $idAuthor || $isAdmin)) {
             $this->PostModel->deletePost($idPost);
-            redirect('posts');
+            $httpReferer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'posts';
+            redirect($httpReferer);
         } else {
             redirect('users/login');
         }
@@ -198,7 +200,8 @@ class Posts extends CI_Controller{
         $isAdmin = $this->UserModel->isAdmin($idLogged);
         if (isset($idLogged) && ($idLogged == $idAuthor || $isAdmin)) {
             $this->PostModel->updatePost($idPost);
-            redirect('posts');
+            $httpReferer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'posts';
+            redirect($httpReferer);
         } else {
             redirect('users/login');
         }
@@ -218,8 +221,11 @@ class Posts extends CI_Controller{
         $idLogged = $this->CookieModel->isLoggedIn();
         if ((isset($idLogged))) {
             $this->PostModel->like($idPost, $idLogged);
-            $link = base_url().'posts/'.$idPost;
-            redirect($link);
+            /*$link = base_url().'posts/'.$idPost;
+            redirect($link);*/
+            $httpReferer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'posts';
+            redirect($httpReferer);
+
         }
     }
 
@@ -228,8 +234,10 @@ class Posts extends CI_Controller{
         $idLogged = $this->CookieModel->isLoggedIn();
         if ((isset($idLogged))) {
             $this->PostModel->unlike($idPost, $idLogged);
-            $link = base_url().'posts/'.$idPost;
-            redirect($link);
+           /* $link = base_url().'posts/'.$idPost;
+            redirect($link);*/
+            $httpReferer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'posts';
+            redirect($httpReferer);
         }
     }
 }

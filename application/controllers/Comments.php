@@ -29,7 +29,8 @@
                     $this->load->view('templates/footer');
                 } else {
                     $this->CommentModel->createComment($idPost, $idLogged);
-                    redirect('posts/'.$idPost);
+                    $httpReferer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'posts';
+                    redirect($httpReferer);
                 }
             } else {
                 redirect('users/login');
@@ -44,7 +45,8 @@
             $isAdmin = $this->UserModel->isAdmin($idLogged);
             if (isset($idLogged) && ($idLogged == $idAuthor || $isAdmin )) {
                 $this->CommentModel->deleteComment($idComment);
-                redirect('posts');
+                $httpReferer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'posts';
+                redirect($httpReferer);
             } else {
                 redirect('users/login');
             }
@@ -58,7 +60,8 @@
             $isAdmin = $this->UserModel->isAdmin($idLogged);
             if (isset($idLogged) && ($idLogged == $idAuthor || $isAdmin )) {
                 $this->CommentModel->updateComment($idComment);
-                redirect('posts');
+                $httpReferer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'posts';
+                redirect($httpReferer);
             } else {
                 redirect('users/login');
             }
