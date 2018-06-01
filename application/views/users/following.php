@@ -38,7 +38,7 @@
             <div class="col-3 mb-2">
                 <div class="card hover-shadow h-100">
                     <div class="card-body text-center mx-auto">
-                        <img alt="User Pic" src="<?php echo base_url();?>assets/img/uploads/<?php echo $followed['photo'];?>" id="profile-image1" class="d-block img-thumbnail img-responsive float-left " height="100" width="100">
+                        <img alt="User Pic" src="<?php echo $followed['photo'];?>" id="profile-image1" class="d-block img-thumbnail img-responsive float-left " height="100" width="100">
                     </div>
                     <footer class="card-footer text-center">
                         <p class="mt-2"><a class="hover-primary" href="<?php echo site_url('/users/'.$followed['id']);?>"><?php echo $followed['prenom']." ".$followed['nom'];?></a></p>
