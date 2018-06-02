@@ -73,12 +73,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $active_group = 'default';
 $query_builder = TRUE;
 
+$h = getenv('hostname');
+$u = getenv('username');
+$p= getenv('password');
+$d=   getenv('database');
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'e7qyahb3d90mletd.chr7pe7iynqr.eu-west-1.rds.amazonaws.com',
-	'username' => 'w998cmyb3e48dv58',
-	'password' => 'e0lzvsqbzydhnj8l',
-	'database' => 'n0refmecw7sc6exe',
+	'hostname' => $h,
+	'username' => $u ,
+	'password' => $p ,
+	'database' => $d ,
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
