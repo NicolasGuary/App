@@ -157,4 +157,14 @@
             $query = $this->db->query('SELECT COUNT(*) as likes FROM likers WHERE idPost = ? AND STATE = 1',$idPost);
             return $query->row_array();
         }
+
+        public function getRecentLiked($idUser){
+            $query = $this->db->query(
+                'SELECT likers.idLiker, user.nom, user.prenom, post.id, post.titre
+                FROM likers, user, post 
+                WHERE likers.idPost = post.id and likers.idLiker = user.id and likers.idLiker = ?
+                LIMIT 5',$idUser);
+            return $query->result_array();
+
+        }
     }

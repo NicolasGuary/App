@@ -141,6 +141,9 @@ class Users extends CI_Controller
                     $data['likes'] = $likes_tmp;
                 }
             }
+            /*recent activity*/
+            $data['recentComments'] = $this->CommentModel->getRecentComments($idUser);
+            $data['recentLikes'] = $this->PostModel->getRecentLiked($idUser);
 
             $this->load->view('templates/header', $loggedIn);
             $this->load->view('users/profile', $data);

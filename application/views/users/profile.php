@@ -216,3 +216,35 @@
 <?php if(empty($posts)) : ?>
     <p class="text-center">No recent post to show.</p>
 <?php endif;?>
+
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-center mb-3">Recent comments</h2>
+        <?php foreach ($recentComments as $recent) : ?>
+            <div class="card mx-1 mb-2">
+                <div class="card-body">
+                    <?php echo $recent['body'];?>
+                    <footer class="blockquote-footer"><a class="bio text-muted" href="<?php echo site_url('/posts/'.$recent['id']);?>">on <?php echo $recent['titre'];?></a></footer>
+                </div>
+            </div>
+        <?php endforeach;?>
+        <?php if(empty($recentComments)) : ?>
+            <p class="text-center">No recent comments.</p>
+        <?php endif;?>
+    </div>
+    <div class="col-6">
+        <h2 class="text-center mb-3">Recent Likes</h2>
+        <?php foreach ($recentLikes as $rec) : ?>
+            <div class="card mx-1 mb-2">
+                <div class="card-body">
+                    <?php echo $rec['prenom']." ".$rec['nom'].' gave a new like';?>
+                    <footer class="blockquote-footer"><a class="bio text-muted" href="<?php echo site_url('/posts/'.$rec['id']);?>">on <?php echo $rec['titre'];?></a></footer>
+                </div>
+            </div>
+        <?php endforeach;?>
+        <?php if(empty($recentLikes)) : ?>
+            <p class="text-center">No recent likes.</p>
+        <?php endif;?>
+    </div>
+</div>
+
