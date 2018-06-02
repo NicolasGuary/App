@@ -163,6 +163,7 @@
                 'SELECT likers.idLiker, user.nom, user.prenom, post.id, post.titre
                 FROM likers, user, post 
                 WHERE likers.idPost = post.id and likers.idLiker = user.id and likers.idLiker = ?
+                ORDER BY likers.id DESC
                 LIMIT 5',$idUser);
             return $query->result_array();
 

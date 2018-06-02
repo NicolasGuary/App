@@ -71,6 +71,7 @@
                 'SELECT comment.idUser, comment.body, comment.idPost, comment.idUser, comment.commented_at, user.id, user.nom, user.prenom, post.id, post.titre
                 FROM comment, user, post 
                 WHERE comment.idPost = post.id and comment.idUser = user.id and comment.idUser = ?
+                ORDER BY comment.id DESC
                 LIMIT 5',$idUser);
                 return $query->result_array();
 
