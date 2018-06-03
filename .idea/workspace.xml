@@ -4,11 +4,8 @@
     <list default="true" id="c9b84de5-abce-459f-ab19-3cfc366a3300" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/logs/log-2018-06-02.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/logs/log-2018-06-02.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/CommentModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/CommentModel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/PostModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/PostModel.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +23,8 @@
       <file leaf-file-name="PostModel.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/models/PostModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="743">
-              <caret line="166" column="16" selection-start-line="166" selection-start-column="16" selection-end-line="166" selection-end-column="16" />
+            <state relative-caret-position="698">
+              <caret line="164" column="117" selection-start-line="164" selection-start-column="117" selection-end-line="164" selection-end-column="117" />
             </state>
           </provider>
         </entry>
@@ -320,12 +317,12 @@
       <option name="presentableId" value="Default" />
       <updated>1526492028998</updated>
       <workItem from="1526492030273" duration="178637000" />
-      <workItem from="1527750070626" duration="26078000" />
+      <workItem from="1527750070626" duration="26364000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="204715000" />
+    <option name="totallyTimeSpent" value="205001000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="22" width="1280" height="1013" extended-state="0" />
@@ -650,8 +647,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/PostModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="743">
-          <caret line="166" column="16" selection-start-line="166" selection-start-column="16" selection-end-line="166" selection-end-column="16" />
+        <state relative-caret-position="698">
+          <caret line="164" column="117" selection-start-line="164" selection-start-column="117" selection-end-line="164" selection-end-column="117" />
         </state>
       </provider>
     </entry>
